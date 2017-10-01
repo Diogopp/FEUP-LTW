@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New User</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+  	<form action="save.php" method="post"> <!-- get or post -->
+  		<label>Name:
+  			<input type="text" name="Name">
+  		</label>
+  		<fieldset>
+  			<legend>Age</legend>
+  			<input type="radio" name="age" value="<18">&lt;18
+  			<input type="radio" name="age" value="19-35">19-35
+  			<input type="radio" name="age" value="36-48">36-48
+  			<input type="radio" name="age" value=">49">&gt;49
+  		</fieldset>
+  		<label>Profession:
+  			<input type="text" name="Profession">
+  		</label>
+  		<label>Country:
+  			<select name="country">
+  				<option name="portugal">Portugal</option>
+  				<option name="espanha">Espanha</option>
+  				<option name="frança">França</option>
+  				<option name="brasil">Brasil</option>
+  				<option name="alemanha">Alemanha</option>
+  				<option name="mexico">Mexico</option>
+  				<option name="china">China</option>
+  			</select>
+  		</label>
+  		<fieldset>
+  			<legend>Interests</legend>
+  			<input type="checkbox" name="interests" value="cinema">Cinema
+  			<input type="checkbox" name="interests" value="video games">Video Games
+  			<input type="checkbox" name="interests" value="bowling">Bowling
+  			<input type="checkbox" name="interests" value="reading">Reading
+  		</fieldset>
+  		<label>How did you found out about this site:
+  			<textarea cols="20" rows="6"></textarea>
+  		</label>
+  		<input type="submit" value="Send">
+  	</form>
+  </body>
