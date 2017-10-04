@@ -1,0 +1,40 @@
+
+body > header{
+background-color: #046DD5;
+color:white;
+
+}
+header >h1{
+	font-family:"Montserrat";
+}
+
+nav{
+}
+a{
+ text-decoration: none;
+ color:inherit;
+}
+
+ul{
+background-color:white;
+border: 1px solid red;
+margin:0px;
+padding:0px;
+}
+
+ul > li{
+padding:1em;
+font-weight: bold;
+text-align:center;
+
+}
+
+li:after{
+
+
+}
+
+
+aside{
+	background-color:#2A2F33;
+}
