@@ -1,40 +1,134 @@
 
-body > header{
-background-color: #046DD5;
-color:white;
-
-}
-header >h1{
-	font-family:"Montserrat";
-}
-
-nav{
-}
 a{
- text-decoration: none;
- color:inherit;
+	 text-decoration: none; /* removes underline */
+	 color:inherit; /* removes purple color after clicking */
 }
+
+body > header{
+	background-color: #046DD5;
+	color:white;
+	font-family:sans-serif;
+	padding:1em;
+}
+
+header >h1{
+	font-size: 27px;
+	margin:1em;
+}
+
+header >h2{
+	font-size: 13px;
+	margin:1em;
+}
+
+header > #signup{
+	font-size: 11px;
+	margin:1em;
+}
+
+header > #signup.first-child{
+    width: 150px;
+    height: 200px;
+    float: left;
+    border-left: 2px solid black;
+    padding-left: 10px;
+}
+
+header >h1, header > h2, header > #signup{
+	margin:0em;
+}
+
+nav > label, nav > input{	
+    display: none;
+}
+
 
 ul{
-background-color:white;
-border: 1px solid red;
-margin:0px;
-padding:0px;
+	background-color:white;
+	margin:0px;
+	padding:0px;
 }
 
 ul > li{
-padding:1em;
-font-weight: bold;
-text-align:center;
-
+	padding:1em;
+	font-weight: bold;
+	text-align:center;
+	border-width: 4px;
 }
 
-li:after{
-
-
+ul > li:nth-child(1){
+	border-style: solid;
+	border-color: rgb(225,73,62) rgb(255,255,255) rgb(138,186,86) rgb(255,255,255);
+	border-right:none;
+	border-left:none;
 }
+
+ul > li:nth-child(3){
+	border-style: solid;
+	border-color: rgb(91,66,130) rgb(255,255,255) rgb(255,137,50) rgb(255,255,255);
+	border-right:none;
+	border-left:none;
+}
+
+ul > li:nth-child(5){
+	border-style: solid;
+	border-color: rgb(25,182,233) rgb(255,255,255) rgb(232,76,139) rgb(255,255,255);
+	border-right:none;
+	border-left:none;
+}
+
 
 
 aside{
 	background-color:#2A2F33;
+	padding:1em;
+	color:white;
+}
+
+aside > article > p{
+
+}
+
+section > article > header {
+	position: absolute;
+	margin:1em;
+	color:white;	
+    text-shadow: 5px 4px 3px #000000;
+  	width: 220px;
+
+}
+
+section > article > img{
+
+	margin-top:1em;
+    height: auto;
+    width: 100%;
+}
+
+section > article > p:first-of-type::first-letter {
+	font-weight:bold;
+	font-size:30px;
+}
+
+
+section > article > p:first-of-type::first-letter {
+	font-weight:bold;
+	font-size:30px;
+}
+
+section > article > p {
+	margin:1em;
+}
+
+section > article > footer{
+	background-color:rgb(244,101,95);
+	color:white;
+	padding:0.5em;
+	font-family:sans-serif;
+}
+
+
+section > article > footer > a{
+
+    text-decoration: underline;
 }
