@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Blog</title>
+    <title>DueBook</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
   </head>
   <body>
     <header>
-      <h1><a href="index.php">My Blog</a></h1>
+      <h1><a href="index.php">DueBook</a></h1>
     </header>
+<?php
+  if (isset($_SESSION['user'])){
+    echo 'Name | Profile | Exit';
+  }
+  else {
+    echo '<button id ="register" onclick="registerUser()">Click me</button>';
+  }
+
+ ?>
+<script type="text/javascript">
+
+function registerUser() {
+  window.location.href="registerUser.php";
+}
+
+</script>
