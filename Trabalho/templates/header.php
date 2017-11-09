@@ -14,12 +14,19 @@
     echo 'Name | Profile | Exit';
   }
   else {
+<<<<<<< HEAD
     echo '<button id ="register" onclick="registerUser()">Registar</button>';
   }
 
  ?>
 
  <!-- totally not javascript, trust -->
+=======
+    echo '<button id ="register" onclick="registerUser()">Click me</button>';
+  }
+
+ ?>
+>>>>>>> ce6407c0f4eadd0155b0ef66f3f60a59aa1b3de9
 <script type="text/javascript">
 
 function registerUser() {
