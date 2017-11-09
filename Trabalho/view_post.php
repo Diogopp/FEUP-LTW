@@ -1,7 +1,8 @@
 <?php
-  if (!isset($_GET['id'])) die('No id');
+  if (!isset($_GET['id']))
+     die('No id');
 
-  include_once('database/connection.php');  
+  include_once('database/connection.php');
   include_once('database/post.php');
 
   try {
