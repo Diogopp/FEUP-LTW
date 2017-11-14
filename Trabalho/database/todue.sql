@@ -1,6 +1,5 @@
 PRAGMA foreign_keys=ON;
 
-
 BEGIN TRANSACTION;
 
 
@@ -27,7 +26,7 @@ CREATE TABLE ELEMENT(
 	idElement INTEGER,
 	tasks TEXT,
 	deadLine DATA,
-	done INTEGER,    /*0 - Não; 1 - Sim; 2 - Não atualizou*/
+	done INTEGER,    /*0 - Nao; 1 - Sim; 2 - Nao atualizou*/
 	idUser INTEGER,
 	idCategory INTEGER,
 	PRIMARY KEY(idElement),
