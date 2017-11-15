@@ -13,10 +13,6 @@
   if (isset($_SESSION['user'])){
     echo 'Name | Profile | Exit';
   }
-  else {
-
-    echo '<button id ="register" onclick="registerUser()">Registar</button>';
-  }
 
  ?>
 
