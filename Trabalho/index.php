@@ -6,8 +6,8 @@
   include_once('database/listsQueries.php');
 
 
-unset($_SESSION['user']);
-//$_SESSION['user'] = 90;
+//unset($_SESSION['user']);
+$_SESSION['user'] = 90;
 
 ?>
 <style>
@@ -24,7 +24,7 @@ unset($_SESSION['user']);
   background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
-  padding: 45px;
+  padding: 15px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -43,7 +43,7 @@ unset($_SESSION['user']);
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background: rgb(255, 63, 254);
   width: 100%;
   border: 0;
   padding: 15px;
@@ -53,7 +53,7 @@ unset($_SESSION['user']);
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: rgb(238, 0, 237);
 }
 .form .message {
   margin: 15px 0 0;
@@ -61,7 +61,7 @@ unset($_SESSION['user']);
   font-size: 12px;
 }
 .form .message a {
-  color: #4CAF50;
+  color: rgb(255, 63, 254);
   text-decoration: none;
 }
 .form .register-form {
@@ -111,17 +111,18 @@ unset($_SESSION['user']);
       if (isset($_SESSION['user']))
           getAllElements($dbh);
       else
-        echo '
-        <div class="login-page">
-          <div class="form">
-            <form id="login" action = "user/loginUser.php">
-              <input type="text" placeholder="  username"/>
-              <input type="password" placeholder="password"/>
-              <button id ="login" type="submit">Login</button>
-              <p class="message">Not registered? <a href="user/registerUser.php">Create an account</a></p>
-            </form>
+          echo '
+          <div class="login-page">
+            <div class="form">
+              <form id="login" action = "user/loginUser.php">
+                <input type="text" placeholder="  username"/>
+                <input type="password" placeholder="password"/>
+                <button id ="login" type="submit">Login</button>
+                <p class="message">Not registered? <a href="user/registerUser.php">Create an account</a></p>
+                            <img float="right" border="0" alt="ToDueBook" src="assets/detective.png" width="200" height="200">
+              </form>
+            </div>
           </div>
-        </div>
 
         ';
      ?>

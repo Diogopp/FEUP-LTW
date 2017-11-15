@@ -7,7 +7,9 @@
   </head>
   <body>
     <header>
-      <h1><a href="index.php">ToDueBook</a></h1>
+      <a href="index.php">
+         <img border="0" alt="ToDueBook" src="assets/logo.png" width="500" height="150">
+      </a>
     </header>
 <?php
   if (isset($_SESSION['user'])){
