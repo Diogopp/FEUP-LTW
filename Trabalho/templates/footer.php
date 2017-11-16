@@ -1,8 +1,5 @@
 
-<?php
-  echo'  <link rel="stylesheet" href="css/footer.css"> ';
- ?>
-  <footer>
+<footer id="footer">
     <h5>
     Project realized @ FEUP <?php echo date("Y"); ?>
   </h5>

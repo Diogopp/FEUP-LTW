@@ -3,7 +3,7 @@
   <head>
     <title>DueBook</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
@@ -12,16 +12,8 @@
       </a>
     </header>
 <?php
-  if (isset($_SESSION['user'])){
+ /* if (isset($_SESSION['user'])){
     echo 'Name | Profile | Exit';
-  }
+  }*/
 
  ?>
-
-<script type="text/javascript">
-
-function registerUser() {
-  window.location.href="registerUser.php";
-}
-
-</script>
