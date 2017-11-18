@@ -7,9 +7,13 @@
   </head>
   <body>
     <header>
-      <a href="index.php">
-         <img border="0" alt="ToDueBook" src="assets/logo.png" width="500" height="150">
-      </a>
+      <h1>
+        ToDueBook
+      </h1>
+
+      <h3>
+        for planners and thinkers
+      </h3>
     </header>
 <?php
  /* if (isset($_SESSION['user'])){
