@@ -41,4 +41,27 @@
     $stmt->execute(array($title, $introduction, $fulltext, $id));
   }
 
+  function getNameDateUser($dbh) {
+    try{
+    $stmt = $dbh->prepare('SELECT name,dataNascimento FROM USER WHERE idUser = ?');
+    $stmt->execute(array($_SESSION['user']));
+    echo '
+      <table style="width:100%">
+          <tr>
+            <th align="left">Name</th>
+            <th align="left">Birth Date</th>
+            </tr>';
+    while($row = $stmt->fetch()){
+      echo '
+          <tr>
+            <td>'. $row['name'].'</td>
+            <td>'. $row['dataNascimento'].'</td>;
+          </tr>';
+    }
+    echo '</table>';
+   }
+   catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }
+}
 ?>
