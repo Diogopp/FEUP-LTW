@@ -1,6 +1,5 @@
 <?php
 
-
   function getAllElements($dbh) {
     try{
     $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idUser = ?');
@@ -41,4 +40,30 @@
     $stmt->execute(array($title, $introduction, $fulltext, $id));
   }
 
+  function getUserName($dbh) {
+    try{
+      $stmt = $dbh->prepare('SELECT name FROM USER WHERE idUser = ?');
+      $stmt->execute(array($_SESSION['user']));
+
+      $row = $stmt->fetch();
+      echo 'Name: '. $row['name'];
+    }
+   catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }
+}
+
+function login($dbh){
+  try{
+    $stmt = $dbh->prepare('SELECT idUser FROM User WHERE name = ? AND password = ?');
+    $stmt->execute(array($_POST['userLog'], $_POST['passLog']));
+    if ($row = $stmt->fetch() != NULL)
+      $_SESSION['currentUser']= $row['idUser'];
+    else
+      header("Location: ../index.php?failed");
+  }
+  catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }
+}
 ?>
