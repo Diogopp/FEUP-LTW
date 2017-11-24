@@ -11,7 +11,6 @@
       <h1>
         ToDueBook
       </h1>
-
       <h3>
         for planners and thinkers
       </h3>

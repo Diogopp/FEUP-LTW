@@ -40,6 +40,7 @@
     $stmt->execute(array($title, $introduction, $fulltext, $id));
   }
 
+
   function getUserName($dbh) {
     try{
       $stmt = $dbh->prepare('SELECT name FROM USER WHERE idUser = ?');
@@ -48,6 +49,7 @@
       $row = $stmt->fetch();
       echo 'Name: '. $row['name'];
     }
+
    catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
@@ -66,4 +68,5 @@ function login($dbh){
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 }
+
 ?>
