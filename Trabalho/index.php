@@ -12,7 +12,7 @@
 //User: ut odio
 //password: fBTfRC6AS26R
 
- if (isset($_SESSION['user'])){
+ if (isset($_SESSION['currentUser'])){
    echo '
      <div class = "gridContainer">';
      include_once("leftSideBar.php");
