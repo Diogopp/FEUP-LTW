@@ -3,7 +3,7 @@
   function getAllElements($dbh) {
     try{
     $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idUser = ?');
-    $stmt->execute(array($_SESSION['user']));
+    $stmt->execute(array($_SESSION['currentUser']));
     echo '
       <table style="width:100%">
           <tr>
@@ -44,7 +44,7 @@
   function getUserName($dbh) {
     try{
       $stmt = $dbh->prepare('SELECT name FROM USER WHERE idUser = ?');
-      $stmt->execute(array($_SESSION['user']));
+      $stmt->execute(array($_SESSION['currentUser']));
 
       $row = $stmt->fetch();
       echo 'Name: '. $row['name'];
@@ -56,6 +56,8 @@
 }
 
 function login($dbh){
+  echo'here';
+  die;
   try{
     $stmt = $dbh->prepare('SELECT idUser FROM User WHERE name = ? AND password = ?');
     $stmt->execute(array($_POST['userLog'], $_POST['passLog']));

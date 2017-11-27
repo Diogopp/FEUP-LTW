@@ -17,7 +17,7 @@
      <div class = "gridContainer">';
      include_once("leftSideBar.php");
      include_once("mainBar.php");
-    include_once("rightSideBar.php");
+     include_once("rightSideBar.php");
     echo '</div>';
   }
   else

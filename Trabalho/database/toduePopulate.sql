@@ -19,6 +19,9 @@ insert into CATEGORY (idCategory , category ) values (81, 'vel');
 --Populating ELEMENT table
 
 insert into ELEMENT (idElement , tasks , deadLine, done , idUser, idCategory ) values (11, 'maecenas ut massa quis', '8/19/2017', 0, 90, 95);
+insert into ELEMENT (idElement , tasks , deadLine, done , idUser, idCategory ) values (1, 'Fazer LTW', '8/19/2017', 0, 90, 95);
+insert into ELEMENT (idElement , tasks , deadLine, done , idUser, idCategory ) values (2, 'Chorar PLOG', '8/19/2017', 0, 90, 95);
+insert into ELEMENT (idElement , tasks , deadLine, done , idUser, idCategory ) values (3, 'Rezar RCOM', '8/19/2017', 0, 90, 95);
 insert into ELEMENT (idElement , tasks , deadLine, done , idUser, idCategory ) values (56, 'vestibulum quam sapien varius', '6/13/2017', 1, 28, 47);
 insert into ELEMENT (idElement , tasks , deadLine, done , idUser, idCategory ) values (99, 'quis lectus suspendisse potenti', '11/2/2017', 1, 31, 28);
 insert into ELEMENT (idElement , tasks , deadLine, done , idUser, idCategory ) values (58, 'praesent id massa id nisl', '11/3/2017', 2, 100, 75);
