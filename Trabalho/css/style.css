@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Didact+Gothic|Josefin+Sans|Manuale');
 
-* {
-    box-sizing: border-box;
-}
 
 .gridContainer{
   display:grid;
@@ -13,12 +10,22 @@
   color: white;
 }
 
+body {
+    background-image: url("/assets/background.png");
+    background-position: center center;
+    background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.5em;
-  text-align: center;
+  text-align: left;
   color: white;
-  position: fixed;
+  /*position: absolute;*/
   right: 0;
   left: 0;
   top: 0;
@@ -26,11 +33,22 @@ header {
   background-color: #CC9900;
 }
 
+header >h1 {
+  font-size: 2em;
+  margin-bottom:0rem;
+}
+
+header >h2 {
+  font-size: 1em;
+  margin-top:0.5rem;
+}
+
 #leftSideBar {
   grid-column-start: 1;
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 1;
+  padding-left: 1em;
 }
 
 #mainSection {
@@ -38,6 +56,9 @@ header {
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 1;
+  width: 40em;
+  margin: 0 auto;
+  padding-top: 1.3em;
 }
 
 #rightSideBar {
@@ -45,6 +66,7 @@ header {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 1;
+  padding-right:0em;
 }
 
 footer {
@@ -56,11 +78,6 @@ footer {
   padding: 1rem;
   background-color: #CC9900;
   text-align: center;
-}
-
-#mainSection {
-  width: 40em;
-  margin: 0 auto;
 }
 
 

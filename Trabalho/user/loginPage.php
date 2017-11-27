@@ -1,5 +1,3 @@
-<?php 
-include_once('../database/listsQueries.php'); ?>
 
 <div class="login-page">
   <div class="form">

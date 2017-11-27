@@ -1,5 +1,5 @@
 <?php
-//  include('../database/connection.php');
+  include('../database/connection.php');
  try{
       $stmt = $dbh->prepare('SELECT idUser FROM User WHERE name = ? AND password = ?');
       $stmt->execute(array($_POST['userLog'], $_POST['passLog']));
