@@ -3,8 +3,8 @@
   <h4><b>Profile<b></h4>
     <?php getUserName($dbh); ?>
   <br>
-  <a href="user/profile.php">Profile</a>
+  <button id="profile">Profile</button>
   <br>
-  <a id="logout" href="#" >Logout</a>
+  <button id="logout">Logout</button>
 
 </div>

@@ -5,13 +5,14 @@
   include_once('database/listsQueries.php');
   include_once('templates/header.php');
 
-//unset($_SESSION['currentUser']);
-//$_SESSION['currentUser'] = 90;
 
-//USER FOR TESTING:
-//User: ut odio
-//password: fBTfRC6AS26R
+										//USER FOR TESTING:
+										//User: ut odio
+								//password: fBTfRC6AS26R
 
+if (isset($_GET["failed"]))
+	echo "loginFailed();";
+  
  if (isset($_SESSION['currentUser'])){
    echo '
      <div class = "gridContainer">';
@@ -22,21 +23,7 @@
   }
   else
     include_once("user/loginPage.php");
-?>
 
-<script type="text/javascript">
 
-	function loginFailed()
-	{
-		alert("Login inválido.");
-	}
-
-  <?php
-		if (isset($_GET["failed"]))
-			echo "loginFailed();";
-  ?>
-</script>
-
-<?php
   include_once('templates/footer.php');
 ?>
