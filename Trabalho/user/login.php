@@ -1,12 +1,13 @@
 <?php
-//  include('../database/connection.php');
-session_start();
+  session_start();
+  include(__DIR__ . '/../database/connection.php');
  try{
-      global  $dbh;
       $stmt = $dbh->prepare('SELECT idUser FROM User WHERE name = ? AND password = ?');
       $stmt->execute(array($_POST['userLog'], $_POST['passLog']));
-      if ($row = $stmt->fetch() != NULL)
-        $_SESSION['currentUser']= $row['idUser'];
+      if ( ($row = $stmt->fetch()) != NULL){
+          $_SESSION['currentUser']= $row['idUser'];
+          header("Location: ../index.php");
+      }
       else
         header("Location: ../index.php?failed");
     }
