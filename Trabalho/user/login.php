@@ -1,6 +1,8 @@
 <?php
-  include('../database/connection.php');
+//  include('../database/connection.php');
+session_start();
  try{
+      global  $dbh;
       $stmt = $dbh->prepare('SELECT idUser FROM User WHERE name = ? AND password = ?');
       $stmt->execute(array($_POST['userLog'], $_POST['passLog']));
       if ($row = $stmt->fetch() != NULL)

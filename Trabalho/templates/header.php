@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>DueBook</title>
-    <meta charset="utf-8">    
+    <meta charset="utf-8">
     <script src="functions.js" defer> </script>
     <link rel="stylesheet" href="css/style.css">
   </head>
