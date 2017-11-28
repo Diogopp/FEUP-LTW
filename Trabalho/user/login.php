@@ -10,8 +10,10 @@
       }
       else
         header("Location: ../index.php?failed");
+
     }
     catch (Exception $e) {
       echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
+
 ?>

@@ -9,8 +9,3 @@ if (document.getElementById("profile") != null)
   document.getElementById("profile").onclick = function(event){
       window.location.href="user/profile.php";
 }
-
-function loginFailed()
-{
-	alert("Login inválido.");
-}

@@ -8,11 +8,8 @@
 
 										//USER FOR TESTING:
 										//User: ut odio
-								//password: fBTfRC6AS26R
+										//password: fBTfRC6AS26R
 
-if (isset($_GET["failed"]))
-	echo "loginFailed();";
-  
  if (isset($_SESSION['currentUser'])){
    echo '
      <div class = "gridContainer">';
@@ -23,7 +20,21 @@ if (isset($_GET["failed"]))
   }
   else
     include_once("user/loginPage.php");
+?>
 
+<script type="text/javascript">
 
+	function loginFailed()
+	{
+		alert("Wrong login combination.");
+	}
+
+  <?php
+		if (isset($_GET["failed"]))
+			echo "loginFailed();";
+  ?>
+</script>
+
+<?php
   include_once('templates/footer.php');
 ?>
