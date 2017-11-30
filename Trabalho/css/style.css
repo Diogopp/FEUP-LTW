@@ -25,7 +25,7 @@ header {
   font-family: 'Josefin Sans', sans-serif;
   text-align: left;
   color: white;
-  position: absolute;
+  position: fixed;
   right: 0;
   left: 0;
   top: 0;
@@ -71,10 +71,8 @@ header >h2 {
 
 footer {
   font-family: 'Josefin Sans', sans-serif;
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  margin-top: 90%;
+  height: 10%;
   padding: 1rem;
   background-color: rgb(32,118, 140);
   text-align: center;
@@ -85,17 +83,21 @@ footer {
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
-  width: 360px;
+  width: 100%;
   padding: 8% 0 0;
   margin: auto;
 }
 .form {
   border-radius: 15px;
-  position: relative;
+  position: static;
+  margin-left: 30%;
+  margin-right:30%;
+  margin-top: 10%;
+  margin-bottom:70%;
+  width: 40%;
+  height: 20%;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
   padding: 15px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
