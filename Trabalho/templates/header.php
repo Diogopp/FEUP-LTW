@@ -22,7 +22,7 @@ echo __DIR__ . '/../database/connection.php';*/
       <h1>
         ToDueBook
       </h1>
-      <h3>
-        for planners and thinkers
-      </h3>
+      <h2>
+        <i>for</i> planners <i>and</i> forgetters
+      </h2>
     </header>
