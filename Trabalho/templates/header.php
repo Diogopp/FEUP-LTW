@@ -15,7 +15,7 @@ echo __DIR__.'/../functions.js';
 echo __DIR__ . '/../database/connection.php';*/
 ?>
   <script src="functions.js" defer> </script>
-   <link rel="stylesheet" type = "text/css" href="css/style.css">'
+   <link rel="stylesheet" type = "text/css" href="css/style.css">
   </head>
   <body>
     <header>
