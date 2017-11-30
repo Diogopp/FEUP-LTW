@@ -12,6 +12,7 @@
 
 body {
     background-color: black;
+    background: url("../../assets/background.png");
     background-position: center center;
     background-size: cover;
 }
