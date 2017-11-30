@@ -3,15 +3,14 @@
   include(__DIR__ . '/../database/connection.php');
   try{
       //VERIFICAR PATHIMAGEM PARA A TABLE
-    print_r($_SESSION);
-  //  echo $_SESSION['currentUser'];
+
+    $idUser = 1000;  //fazer query para ir buscar o maior ID
     $timestamp = time();
-    $stmt = $dbh->prepare('INSERT into USER(idUser ,name, dataNascimento, password, sexo, dataRegisto)
-    Values(?, ?, ?, ?, ?, ?)');
+    $pathImage = "0";
 
-    $idUser = 999;
-
-    $stmt->execute(array($idUser, $_POST['username'],$_POST['birthdate'],$_POST['password'], $_POST['gender'], $timestamp));
+    $stmt = $dbh->prepare('INSERT INTO USER(idUser ,name, dataNascimento, password, pathImage, sexo, dataRegisto)
+    Values(?, ?, ?, ?, ?, ?, ?)');
+    $stmt->execute(array($idUser, $_POST['username'],$_POST['birthdate'],$_POST['password'], $pathImage, $_POST['gender'], $timestamp));
 
 
   }

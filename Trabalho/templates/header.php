@@ -3,8 +3,19 @@
   <head>
     <title>DueBook</title>
     <meta charset="utf-8">
-    <script src="functions.js" defer> </script>
-    <link rel="stylesheet" href="css/style.css">
+<?php
+ /*if (__DIR__ == $_GLOBALS['root'])
+          echo ' <script src="functions.js" defer> </script>
+              <link rel="stylesheet" type = "text/css" href="css/style.css">';
+      else
+        echo ' <script src="' .__DIR__. '/../functions.js" defer> </script>
+              <link rel="stylesheet"  type = "text/css" href="'.__DIR__ .'/../css/style.css">';
+
+echo __DIR__.'/../functions.js';
+echo __DIR__ . '/../database/connection.php';*/
+?>
+  <script src="functions.js" defer> </script>
+   <link rel="stylesheet" type = "text/css" href="css/style.css">'
   </head>
   <body>
     <header>
