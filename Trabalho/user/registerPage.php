@@ -2,8 +2,8 @@
 <?php include_once('../templates/header.php'); ?>
 
 <div class="login-page">
-  <div >
-    <form id="register" method="post" action = "#" onsubmit="login($dbh);">
+  <div>
+    <form id="register" method="post" action = "register.php" >
       <input type="text" name="username" placeholder="username" required/>
       <input type="password" name="password" placeholder="password" required/>
       <input type="date" name="birthdate" placeholder="birthdate" required/>

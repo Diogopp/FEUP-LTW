@@ -4,3 +4,8 @@ if (document.getElementById("logout") != null)
       window.location.href="user/logout.php";
 
 }
+
+if (document.getElementById("profile") != null)
+  document.getElementById("profile").onclick = function(event){
+      window.location.href="user/profile.php";
+}

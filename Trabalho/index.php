@@ -1,16 +1,25 @@
 <?php
   session_start();
 
+  $_GLOBALS['root'] = dirname(__FILE__);
   include_once('database/connection.php');
   include_once('database/listsQueries.php');
   include_once('templates/header.php');
 
-//unset($_SESSION['currentUser']);
-//$_SESSION['currentUser'] = 90;
 
-//USER FOR TESTING:
-//User: ut odio
-//password: fBTfRC6AS26R
+/*  try{
+  $stmt = $dbh->prepare('SELECT * FROM User');
+  $stmt->execute();
+    print_r($stmt->fetchAll());
+ }
+ catch (Exception $e) {
+  echo 'Caught exception: ',  $e->getMessage(), "\n";
+}*/
+	//USER FOR TESTING:
+	//User: ut odio
+	//password: fBTfRC6AS26R
+
+
 
  if (isset($_SESSION['currentUser'])){
    echo '
@@ -28,7 +37,7 @@
 
 	function loginFailed()
 	{
-		alert("Login inválido.");
+		alert("Wrong login combination.");
 	}
 
   <?php

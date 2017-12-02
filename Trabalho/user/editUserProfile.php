@@ -1,7 +1,7 @@
 <?php
   //  include('../database/connection.php');
     try{
-      $stmt = $dbh->prepare('INSERT into USER(idUser,name, dataNascimento, password, pathImagem, sexo, dataRegisto)
+      $stmt = $dbh->prepare('UPDATE ...
       Values(?, ?, ?, ?, ?, ?, ?');
 
       $stmt->execute(array($_SESSION['currentUser'], $_POST['name'],$_POST['dataNascimento'],$_POST['password'],
