@@ -15,11 +15,6 @@
  catch (Exception $e) {
   echo 'Caught exception: ',  $e->getMessage(), "\n";
 }*/
-	//USER FOR TESTING:
-	//User: ut odio
-	//password: fBTfRC6AS26R
-
-
 
  if (isset($_SESSION['currentUser'])){
    echo '
