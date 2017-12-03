@@ -8,3 +8,8 @@ if (document.getElementById("profile") != null)
   document.getElementById("profile").onclick = function(event){
       window.location.href="user/profile.php";
 }
+
+if (document.getElementById("editProfile") != null)
+  document.getElementById("editProfile").onclick = function(event){
+      window.location.href="user/editProfilePage.php";
+}

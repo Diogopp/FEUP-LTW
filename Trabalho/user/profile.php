@@ -7,6 +7,7 @@
 <!--idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto  -->
 
 <div id = "profile">
+    <form id="editProf" method="post" action = "editProfile.php">
   <?php
   try{
     $stmt = $dbh->prepare('SELECT * FROM USER WHERE idUser = ?');
@@ -29,15 +30,12 @@
     echo "Novo campo para meter info extra";
     echo '<br>';
 
-    echo "<button id='profile' onclick='editProfilePage.php'>Profile</button>";
-
-    echo '<br>';
-
    }
    catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 ?>
+  <button id='editProfile'>Edit Profile</button>
 </div>
 
 <?php include_once('../templates/footer.php'); ?>
