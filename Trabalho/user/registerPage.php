@@ -16,5 +16,3 @@
 </div>
 
 <?php include_once('../templates/footer.php'); ?>
-
-<!-- idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto  -->
