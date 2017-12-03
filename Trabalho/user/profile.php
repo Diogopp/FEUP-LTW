@@ -1,21 +1,8 @@
 <?php
   session_start();
   include(__DIR__ . '/../database/connection.php');
+  include_once('../templates/header.php');
  ?>
-
-<div class="login-page">
-  <div>
-    <form id="register" method="post" action = "register.php" >
-      <input type="text" name="username" placeholder="username" required/>
-      <input type="password" name="password" placeholder="password" required/>
-      <input type="date" name="birthdate" placeholder="birthdate" required/>
-      <input type="text" name="gender" placeholder="gender" required/>
-      <button id ="login" type="submit">Register</button>
-      <p class="message">Already registered? <a href="loginPage.php">Login here</a></p>
-
-    </form>
-  </div>
-</div>
 
 <!--idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto  -->
 
@@ -26,7 +13,24 @@
     $stmt->execute(array($_SESSION['currentUser']));
     $row = $stmt->fetch();
 
+    echo "Name: ";
     echo $row['name'];
+    echo '<br>';
+    echo "Birthdate: ";
+    echo $row['dataNascimento'];
+    echo '<br>';
+    echo "Gender: ";
+    echo $row['sexo'];
+    echo '<br>';
+    echo "Register Date: ";
+    echo $row['dataRegisto'];
+    echo '<br>';
+    echo "Extra information: ";
+    echo "Novo campo para meter info extra";
+    echo '<br>';
+
+    echo "<button id='profile' onclick='editProfilePage.php'>Profile</button>";
+
     echo '<br>';
 
    }

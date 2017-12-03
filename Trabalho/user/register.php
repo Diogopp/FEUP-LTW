@@ -5,9 +5,15 @@
   try{
       //VERIFICAR PATHIMAGEM PARA A TABLE
 
-    $idUser = 1001;  //fazer query para ir buscar o maior ID
     $timestamp = time();
     $pathImage = "0";
+
+    //get max ID
+    $stmt = $dbh->prepare('SELECT idUser FROM USER ORDER BY idUser DESC LIMIT 1');
+    $stmt->execute();
+    $row = $stmt->fetch();
+
+    $idUser = $row['idUser'] + 1;
 
     $stmt = $dbh->prepare('INSERT INTO USER(idUser ,name, dataNascimento, password, pathImage, sexo, dataRegisto)
     Values(?, ?, ?, ?, ?, ?, ?)');

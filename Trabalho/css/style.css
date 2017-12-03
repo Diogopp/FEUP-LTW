@@ -58,7 +58,7 @@ header >h2 {
   grid-row-start: 1;
   grid-row-end: 1;
   width: 40em;
-  margin: 0 auto;
+  margin: 0;
   padding-top: 1.3em;
 }
 

@@ -7,7 +7,10 @@
       <input type="text" name="username" placeholder="username" required/>
       <input type="password" name="password" placeholder="password" required/>
       <input type="date" name="birthdate" placeholder="birthdate" required/>
-      <input type="text" name="gender" placeholder="gender" required/>
+      <input type="radio" name="gender" value="male"> Male<br>
+      <input type="radio" name="gender" value="female"> Female<br>
+      <input type="radio" name="gender" value="other"> Other
+      <input type="text" name="extra" placeholder="Extra information..."/>
       <button id ="login" type="submit">Register</button>
       <p class="message">Already registered? <a href="loginPage.php">Login here</a></p>
 
