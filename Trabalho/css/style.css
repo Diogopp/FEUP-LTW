@@ -12,7 +12,7 @@
 
 body {
     background-color: black;
-    background: url("../../assets/background.png");
+    /*background: url("../../assets/background.png");*/
     background-position: center center;
     background-size: cover;
 }
@@ -26,7 +26,7 @@ header {
   font-family: 'Josefin Sans', sans-serif;
   text-align: left;
   color: white;
- /* position: fixed; */
+  position: fixed;
   right: 0;
   left: 0;
   top: 0;
@@ -79,10 +79,9 @@ footer {
   text-align: center;
 }
 
-
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+/*************************LOGIN*********************/
 .login-page {
   width: 100%;
   padding: 8% 0 0;
