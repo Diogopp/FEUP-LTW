@@ -17,5 +17,16 @@
     </form>
   </div>
 </div>
+<script type="text/javascript">
 
+	function registerFailed()
+	{
+		alert("The user already exists! Try again");
+	}
+
+  <?php
+		if (isset($_GET["regFailed"]))
+			echo "registerFailed();";
+  ?>
+</script>
 <?php include_once('../templates/footer.php'); ?>

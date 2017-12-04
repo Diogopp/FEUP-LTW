@@ -7,7 +7,6 @@
 <!--idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto  -->
 
 <div id = "profile">
-    <form id="editProf" method="post" action = "editProfile.php">
   <?php
   try{
     $stmt = $dbh->prepare('SELECT * FROM USER WHERE idUser = ?');
@@ -18,13 +17,15 @@
     echo $row['name'];
     echo '<br>';
     echo "Birthdate: ";
-    echo $row['dataNascimento'];
+    $birthDate = date('d/m/Y', strtotime( $row['dataNascimento']));
+    echo $birthDate;
     echo '<br>';
     echo "Gender: ";
     echo $row['sexo'];
     echo '<br>';
     echo "Register Date: ";
-    echo $row['dataRegisto'];
+    $registDate = date('d/m/Y', strtotime( $row['dataRegisto']));
+    echo $registDate;
     echo '<br>';
     echo "Extra information: ";
     echo "Novo campo para meter info extra";
@@ -35,7 +36,9 @@
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 ?>
-  <button id='editProfile'>Edit Profile</button>
+  <button id='editProfile' onclick="window.location.href= 'editProfile.php'">Edit Profile</button>
 </div>
+
+<button id='exitProfile' onclick="window.location.href='../index.php'">Go back</button>
 
 <?php include_once('../templates/footer.php'); ?>

@@ -27,17 +27,17 @@
       echo '<br>';
 
       echo "Gender: <br>";
-      if ($row['sexo'] == "Male"){
+      if ($row['sexo'] == "male"){
         echo '<input type="radio" name="gender" value="male" checked="checked"> Male<br>
           <input type="radio" name="gender" value="female"> Female<br>
           <input type="radio" name="gender" value="other"> Other';
       }
-      if ($row['sexo'] == "Female"){
+      if ($row['sexo'] == "female"){
         echo '<input type="radio" name="gender" value="male"> Male<br>
           <input type="radio" name="gender" value="female" checked="checked"> Female<br>
           <input type="radio" name="gender" value="other"> Other';
       }
-      else{
+      else if ($row['sexo'] == "other"){
         echo '<input type="radio" name="gender" value="male" > Male<br>
           <input type="radio" name="gender" value="female"> Female<br>
           <input type="radio" name="gender" value="other" checked="checked"> Other';

@@ -5,7 +5,20 @@
   try{
       //VERIFICAR PATHIMAGEM PARA A TABLE
 
-    $timestamp = time();
+    $stmt = $dbh->prepare('SELECT name FROM USER');
+    $stmt->execute();
+    while($row = $stmt->fetch()){
+      echo "user: ".$_POST['username'];
+      echo "<br>";
+      echo "db: ".$row['name'];
+      echo "<br>";
+      if ($_POST['username'] == $row['name']){
+          header('Location: registerPage.php?regFailed');
+          die();
+        }
+    }
+
+    $date = date('Y-m-d', time());
     $pathImage = "0";
 
     //get max ID
@@ -17,7 +30,7 @@
 
     $stmt = $dbh->prepare('INSERT INTO USER(idUser ,name, dataNascimento, password, pathImage, sexo, dataRegisto)
     Values(?, ?, ?, ?, ?, ?, ?)');
-    $stmt->execute(array($idUser, $_POST['username'], $_POST['birthdate'], $_POST['password'], $pathImage, $_POST['gender'], $timestamp));
+    $stmt->execute(array($idUser, $_POST['username'], $_POST['birthdate'], $_POST['password'], $pathImage, $_POST['gender'], $date));
 
   }
     catch (Exception $e) {

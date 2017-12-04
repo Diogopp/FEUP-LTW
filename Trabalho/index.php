@@ -7,14 +7,14 @@
   include_once('templates/header.php');
 
 
-/*  try{
-  $stmt = $dbh->prepare('SELECT * FROM User');
-  $stmt->execute();
-    print_r($stmt->fetchAll());
- }
- catch (Exception $e) {
-  echo 'Caught exception: ',  $e->getMessage(), "\n";
-}*/
+//   try{
+//   $stmt = $dbh->prepare('SELECT * FROM User order by dataRegisto');
+//   $stmt->execute();
+//   print_r($stmt->fetchAll());
+//  }
+//  catch (Exception $e) {
+//   echo 'Caught exception: ',  $e->getMessage(), "\n";
+// }
 
  if (isset($_SESSION['currentUser'])){
    echo '

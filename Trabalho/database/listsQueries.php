@@ -12,10 +12,11 @@
             <th align="left">Done</th>
             </tr>';
     while($row = $stmt->fetch()){
+      $deadline = date('d/m/Y', strtotime( $row['deadLine']));
       echo '
           <tr>
             <td>'. $row['tasks'].'</td>
-            <td>'. $row['deadLine'].'</td>';
+            <td>'. $deadline.'</td>';
       if ($row['done'])
         echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
       else
