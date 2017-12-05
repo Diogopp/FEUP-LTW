@@ -6,14 +6,14 @@
 
 <!--idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto  -->
 
-<div id = "profile">
+<div id = "profilePage">
   <?php
   try{
     $stmt = $dbh->prepare('SELECT * FROM USER WHERE idUser = ?');
     $stmt->execute(array($_SESSION['currentUser']));
     $row = $stmt->fetch();
 
-    echo "Name: ";
+    echo "<label>Name: </label>";
     echo $row['name'];
     echo '<br>';
     echo "Birthdate: ";

@@ -4,8 +4,8 @@
     <title>DueBook</title>
     <meta charset="utf-8">
 
-  <script src="functions.js" defer> </script>
-   <link rel="stylesheet" type = "text/css" href = "css/style.css">
+  <script src="../functions.js" defer> </script>
+   <link rel="stylesheet" type = "text/css" href = "../css/style.css">
   </head>
   <body>
     <header>
