@@ -14,7 +14,6 @@
 //  catch (Exception $e) {
 //   echo 'Caught exception: ',  $e->getMessage(), "\n";
 // }
-
  if (isset($_SESSION['currentUser'])){
    echo '
      <div class = "gridContainer">';

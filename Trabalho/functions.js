@@ -14,11 +14,6 @@ if (document.getElementById("addItem") != null)
       window.location.href="../list/addItem.php";
 }
 
-if (document.getElementById("remItem") != null)
-  document.getElementById("remItem").onclick = function(event){
-      window.location.href="../list/deleteItem.php";
-}
-
 if (document.getElementById("addLis") != null)
   document.getElementById("addLis").onclick = function(event){
       window.location.href="../list/addList.php";
@@ -31,8 +26,10 @@ if (document.getElementById("remLis") != null)
 
 removeElementFromList = function(id){
   if (confirm("Are you sure you want to remove the task at hand?")){
-    console.log(id);
-    
+      let url = '../list/deleteItem.php?id=' + id;
+      console.log(url);
+      window.location.href= url;
+
     }
 
 }
