@@ -28,3 +28,11 @@ if (document.getElementById("remLis") != null)
   document.getElementById("remLis").onclick = function(event){
       window.location.href="../list/deleteList.php";
 }
+
+removeElementFromList = function(id){
+  if (confirm("Are you sure you want to remove the task at hand?")){
+    console.log(id);
+    
+    }
+
+}
