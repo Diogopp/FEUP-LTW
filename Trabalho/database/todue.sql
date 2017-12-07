@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS ELEMENT;
 DROP TABLE IF EXISTS CATEGORY;
 
 CREATE TABLE USER(
-	idUser INTEGER,
+	idUser INTEGER AUTOINCREMENT,
 	name TEXT UNIQUE,
 	dataNascimento DATE,
 	password TEXT,
@@ -23,9 +23,9 @@ CREATE TABLE USER(
 
 
 CREATE TABLE ELEMENT(
-	idElement INTEGER,
+	idElement INTEGER AUTOINCREMENT,
 	tasks TEXT,
-	deadLine DATA,
+	deadLine DATE,
 	done INTEGER,    /*0 - Nao; 1 - Sim; 2 - Nao atualizou*/
 	idUser INTEGER,
 	idCategory INTEGER,
@@ -35,7 +35,7 @@ CREATE TABLE ELEMENT(
 );
 
 CREATE TABLE CATEGORY(
-	idCategory INTEGER,
+	idCategory INTEGER AUTOINCREMENT,
 	category TEXT,
 	PRIMARY KEY(idCategory)
 );

@@ -19,12 +19,13 @@ function getAllElements($dbh) {
             <td>'. $deadline.'</td>';
       if ($row['done'])
         echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
-      else
+      else{
         echo ' <td> <input type="checkbox" name="checkbox" </td>';
-      echo'
-       <td>
-        <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i class="fa fa-close"></i></button>
-      </td>';
+        echo'
+         <td>
+          <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i class="fa fa-close"></i></button>
+        </td>';
+      }
       echo' </tr>';
     }
     echo '</table>';
@@ -45,6 +46,31 @@ function getElementsByCategory($dbh, $category) {
   }
 }
 
+function getMaxElementID($dbh){
+  try{
+    $stmt = $dbh->prepare('SELECT idElement FROM Element ORDER BY idElement DESC LIMIT 1');
+    $stmt->execute();
+    if( ($row = $stmt->fetch()) == null)
+      $row['idElement'] = 0;
+    return $row['idElement'];
+  }
+  catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }
+}
+
+function getMaxCategoryID($dbh){
+  try{
+    $stmt = $dbh->prepare('SELECT idCategory FROM CATEGORY ORDER BY idCategory DESC LIMIT 1');
+    $stmt->execute();
+    if( ($row = $stmt->fetch()) == null)
+      $row['idCategory'] = 0;
+    return $row['idCategory'];
+  }
+  catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }
+}
 
 function getUserName($dbh) {
   try{

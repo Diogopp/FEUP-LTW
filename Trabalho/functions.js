@@ -16,7 +16,7 @@ if (document.getElementById("addItem") != null)
 
 if (document.getElementById("addLis") != null)
   document.getElementById("addLis").onclick = function(event){
-      window.location.href="../list/addList.php";
+      window.location.href="../list/addListPage.php";
 }
 
 if (document.getElementById("remLis") != null)
