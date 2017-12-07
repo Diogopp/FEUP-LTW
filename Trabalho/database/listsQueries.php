@@ -1,6 +1,5 @@
 <?php
-
-  function getAllElements($dbh) {
+function getAllElements($dbh) {
     try{
     $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idUser = ?');
     $stmt->execute(array($_SESSION['currentUser']));
@@ -12,14 +11,20 @@
             <th align="left">Done</th>
             </tr>';
     while($row = $stmt->fetch()){
+      $deadline = date('d/m/Y', strtotime( $row['deadLine']));
       echo '
           <tr>
             <td>'. $row['tasks'].'</td>
-            <td>'. $row['deadLine'].'</td>';
+            <td>'. $deadline.'</td>';
       if ($row['done'])
         echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
-      else
+      else{
         echo ' <td> <input type="checkbox" name="checkbox" </td>';
+        echo'
+         <td>
+          <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i class="fa fa-close"></i></button>
+        </td>';
+      }
       echo' </tr>';
     }
     echo '</table>';
@@ -28,33 +33,51 @@
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 }
-
-  function getElementsByCategory($dbh, $category) {
-    $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idCategory = ?');
-    $stmt->execute(array($category));
-    return $stmt->fetchAll();
+function getElementsByCategory($dbh, $category) {
+  try{
+  $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idCategory = ?');
+  $stmt->execute(array($category));
+  return $stmt->fetchAll();
   }
-
-  function updatePost($dbh, $id, $title, $introduction, $fulltext) {
-    $stmt = $dbh->prepare('UPDATE post SET title = ?, introduction = ?,  fulltext = ? WHERE id = ?');
-    $stmt->execute(array($title, $introduction, $fulltext, $id));
+  catch (Exception $e) {
+   echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
-
-
-  function getUserName($dbh) {
-    try{
-      $stmt = $dbh->prepare('SELECT name FROM USER WHERE idUser = ?');
-      $stmt->execute(array($_SESSION['currentUser']));
-
-      $row = $stmt->fetch();
-      echo 'Name: '. $row['name'];
-    }
-
-   catch (Exception $e) {
+}
+function getMaxElementID($dbh){
+  try{
+    $stmt = $dbh->prepare('SELECT idElement FROM Element ORDER BY idElement DESC LIMIT 1');
+    $stmt->execute();
+    if( ($row = $stmt->fetch()) == null)
+      $row['idElement'] = 0;
+    return $row['idElement'];
+  }
+  catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 }
-
+function getMaxCategoryID($dbh){
+  try{
+    $stmt = $dbh->prepare('SELECT idCategory FROM CATEGORY ORDER BY idCategory DESC LIMIT 1');
+    $stmt->execute();
+    if( ($row = $stmt->fetch()) == null)
+      $row['idCategory'] = 0;
+    return $row['idCategory'];
+  }
+  catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }
+}
+function getUserName($dbh) {
+  try{
+    $stmt = $dbh->prepare('SELECT name FROM USER WHERE idUser = ?');
+    $stmt->execute(array($_SESSION['currentUser']));
+    $row = $stmt->fetch();
+    echo 'Name: '. $row['name'];
+  }
+ catch (Exception $e) {
+  echo 'Caught exception: ',  $e->getMessage(), "\n";
+ }
+}
 
 
 
