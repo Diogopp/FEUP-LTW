@@ -6,6 +6,6 @@
 ?>
     <button id = "upList" type="submit" >UpdateList</button>
   </form>
-    <button id ="addItem">Add Item </button>
+    <button id ="addItem" type="button" >Add Item </button>
     <br>
 </section>

@@ -19,7 +19,7 @@ function getAllElements($dbh) {
       if ($row['done'])
         echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
       else{
-        echo ' <td> <input type="checkbox" name="checkbox" </td>';
+        echo ' <td> <input type="checkbox" name="checkbox_'.$row['idElement'].'" </td>';
         echo'
          <td>
           <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i class="fa fa-close"></i></button>
@@ -79,40 +79,34 @@ function getUserName($dbh) {
  }
 }
 
-
-
-////////////
-
-
-
-  function sortAphabetic($dbh) {
-    try{
-      $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idUser = ? Order by tasks');
-      $stmt->execute(array($_SESSION['currentUser']));
-      echo '
-            <table style="width:100%">
-                <tr>
-                  <th align="left">Task</th>
-                  <th align="left">Deadline</th>
-                  <th align="left">Done</th>
-                  </tr>';
-          while($row = $stmt->fetch()){
-            echo '
-                <tr>
-                  <td>'. $row['tasks'].'</td>
-                  <td>'. $row['deadLine'].'</td>';
-            if ($row['done'])
-              echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
-            else
-              echo ' <td> <input type="checkbox" name="checkbox" </td>';
-            echo' </tr>';
-            }
-      echo '</table>';
-    }
-
-   catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
+function sortAphabetic($dbh) {
+  try{
+    $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idUser = ? Order by tasks');
+    $stmt->execute(array($_SESSION['currentUser']));
+    echo '
+          <table style="width:100%">
+              <tr>
+                <th align="left">Task</th>
+                <th align="left">Deadline</th>
+                <th align="left">Done</th>
+                </tr>';
+        while($row = $stmt->fetch()){
+          echo '
+              <tr>
+                <td>'. $row['tasks'].'</td>
+                <td>'. $row['deadLine'].'</td>';
+          if ($row['done'])
+            echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
+          else
+            echo ' <td> <input type="checkbox" name="checkbox" </td>';
+          echo' </tr>';
+          }
+    echo '</table>';
   }
+
+ catch (Exception $e) {
+  echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
 }
 
 function sortByCategory($dbh, $categor) {

@@ -31,5 +31,13 @@ removeElementFromList = function(id){
       window.location.href= url;
 
     }
-
 }
+
+// updateElementFromList = function(id){
+//   if (confirm("Are you sure you want to remove the task at hand?")){
+//       let url = '../list/deleteItem.php?id=' + id;
+//       console.log(url);
+//       window.location.href= url;
+//
+//     }
+// }

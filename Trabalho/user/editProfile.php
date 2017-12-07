@@ -17,7 +17,7 @@
       echo 'Name: ';
       echo "<input type='text' name='username' placeholder='username' value=".$row['name']." />";
       echo '<br>';
-
+      
       echo "Birthdate: ";
       echo "<input type='date' name='birthdate' placeholder='birthdate' value=".$row['dataNascimento']."  />";
       echo '<br>';
