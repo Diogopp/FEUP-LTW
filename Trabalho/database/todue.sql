@@ -11,33 +11,30 @@ DROP TABLE IF EXISTS ELEMENT;
 DROP TABLE IF EXISTS CATEGORY;
 
 CREATE TABLE USER(
-	idUser INTEGER AUTOINCREMENT,
+	idUser INTEGER PRIMARY KEY,
 	name TEXT UNIQUE,
 	dataNascimento DATE,
 	password TEXT,
 	pathImage TEXT,
 	sexo TEXT,
-	dataRegisto TEXT,
-	PRIMARY KEY(idUser)
+	dataRegisto TEXT
 );
 
 
 CREATE TABLE ELEMENT(
-	idElement INTEGER AUTOINCREMENT,
+	idElement INTEGER PRIMARY KEY,
 	tasks TEXT,
 	deadLine DATE,
 	done INTEGER,    /*0 - Nao; 1 - Sim; 2 - Nao atualizou*/
 	idUser INTEGER,
 	idCategory INTEGER,
-	PRIMARY KEY(idElement),
 	FOREIGN KEY(idUser) REFERENCES USER(idUser),
 	FOREIGN KEY(idCategory) REFERENCES CATEGORY(idCategory)
 );
 
 CREATE TABLE CATEGORY(
-	idCategory INTEGER AUTOINCREMENT,
-	category TEXT,
-	PRIMARY KEY(idCategory)
+	idCategory INTEGER PRIMARY KEY,
+	category TEXT
 );
 
 COMMIT;
