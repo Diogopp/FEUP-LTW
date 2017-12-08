@@ -170,12 +170,93 @@ footer {
   grid-row-end: 1;
   padding-right:0em;
   border-left: 5px double grey;
+  text-align: center;
 }
 
 .gridContainer{
+  width: 100%;
   display:grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 25% 50% 25%;
   grid-template-rows: auto;
   background-color: white;
   color: #474242;
+}
+
+#userPhoto {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+#profile{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#profile:hover{
+background: #103b59;
+color: white;
+}
+
+#logout{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#logout:hover{
+background: #103b59;
+color: white;
+}
+
+#addLis{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#addLis:hover{
+background: #103b59;
+color: white;
+}
+
+#remLis{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#remLis:hover{
+background: #103b59;
+color: white;
 }
