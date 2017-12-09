@@ -6,7 +6,7 @@
 
 <!--idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto  -->
 
-<div id = "profile">
+<div id = "profileEditPage">
   <form id="editProf" method="post" action = "editProfilePage.php">
   <?php
     try{
@@ -17,7 +17,7 @@
       echo 'Name: ';
       echo "<input type='text' name='username' placeholder='username' value=".$row['name']." />";
       echo '<br>';
-      
+
       echo "Birthdate: ";
       echo "<input type='date' name='birthdate' placeholder='birthdate' value=".$row['dataNascimento']."  />";
       echo '<br>';
