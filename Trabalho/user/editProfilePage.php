@@ -32,7 +32,7 @@
           <input type="radio" name="gender" value="female"> Female<br>
           <input type="radio" name="gender" value="other"> Other';
       }
-      if ($row['sexo'] == "female"){
+      else if ($row['sexo'] == "female"){
         echo '<input type="radio" name="gender" value="male"> Male<br>
           <input type="radio" name="gender" value="female" checked="checked"> Female<br>
           <input type="radio" name="gender" value="other"> Other';
@@ -41,6 +41,11 @@
         echo '<input type="radio" name="gender" value="male" > Male<br>
           <input type="radio" name="gender" value="female"> Female<br>
           <input type="radio" name="gender" value="other" checked="checked"> Other';
+      }
+      else{
+        echo '<input type="radio" name="gender" value="male" > Male<br>
+          <input type="radio" name="gender" value="female"> Female<br>
+          <input type="radio" name="gender" value="other"> Other';
       }
       echo '<br>';
 
