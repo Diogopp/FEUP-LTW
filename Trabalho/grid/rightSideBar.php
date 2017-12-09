@@ -1,6 +1,6 @@
 <div id = "rightSideBar">
-<!-- <img id = "userPhoto" src="../assets/me.png" alt="User Photo" width=90%> -->
-  <h4><b>Profile<b></h4>
+  <img id = "userPhoto" src="../assets/me.png" alt="User Photo" width=90%>
+  <h4><b> <b></h4>
     <?php getUserName($dbh); ?>
   <br>
   <button id="profile">Profile</button>

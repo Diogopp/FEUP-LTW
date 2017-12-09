@@ -21,7 +21,7 @@
       <br>
       <label>Extra: </label>
       <input type="text" name="extra" placeholder="Extra information..."/>
-      <button id ="login" type="submit">Register</button>
+      <button id ="signup" type="submit">Register</button>
       <p class="message">Already registered? <a href="../">Login here</a></p>
 
     </form>
