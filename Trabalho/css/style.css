@@ -181,7 +181,7 @@ footer {
   background-color: white;
   color: #474242;
 }
-
+/******RIGHT SIDE BAR*******/
 #userPhoto {
     display: block;
     margin-left: auto;
@@ -259,4 +259,129 @@ color: white;
 #remLis:hover{
 background: #103b59;
 color: white;
+}
+
+/******MAIN BAR*******/
+#upList{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#upList:hover{
+background: #103b59;
+color: white;
+}
+
+#addItem{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#addItem:hover{
+background: #103b59;
+color: white;
+}
+
+/*************************PROFILE*********************/
+#editProfile{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#editProfile:hover{
+background: #103b59;
+color: white;
+}
+
+#exitProfile{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#exitProfile:hover{
+background: #103b59;
+color: white;
+}
+
+/*************************EDIT PROFILE*********************/
+#editProfilePage{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#editProfilePage:hover{
+background: #103b59;
+color: white;
+}
+
+/*************************REGISTER*********************/
+#signup{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#signup:hover{
+background: #103b59;
+color: white;
+}
+
+/*already registered. log in*/
+.login-page .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+/*already registered. log in*/
+.login-page .message a {
+  color: #103b59;
+  text-decoration: none;
 }
