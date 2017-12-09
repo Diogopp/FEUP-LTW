@@ -5,6 +5,13 @@
 
   try{
 
+    /*
+      IDEIA: Dá-se o nome da lista e o numero de tasks que se quer.
+      Com ajax, cria-se X tasks, cada um com text e deadline.
+      Caso alguma deadline esteja vazia, o user é alertado.
+      Se nao fizer alteraçoes, a deadline default é uma semana após a criaçao da lista
+
+     */
     $stmt = $dbh->prepare('INSERT INTO CATEGORY(Category) Values(?)');
     $stmt->execute(array($_POST['listName']));
     $idCategory = $dbh->lastInsertId();

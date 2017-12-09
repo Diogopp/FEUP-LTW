@@ -9,7 +9,7 @@
           header("Location: ../index.php");
       }
       else
-        header("Location: ../index.php?failed");
+        header("Location: ../index/index.php?failed");
 
     }
     catch (Exception $e) {
