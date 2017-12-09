@@ -28,6 +28,7 @@
     echo $registDate;
     echo '<br>';
     echo "Extra information: ";
+  //  echo $row['extra'];
     echo "Novo campo para meter info extra";
     echo '<br>';
 
@@ -36,7 +37,7 @@
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 ?>
-  <button id='editProfile' onclick="window.location.href= 'editProfile.php'">Edit Profile</button>
+  <button id='editProfile' onclick="window.location.href= 'editProfilePage.php'">Edit Profile</button>
 </div>
 
 <button id='exitProfile' onclick="window.location.href='../index.php'">Go back</button>

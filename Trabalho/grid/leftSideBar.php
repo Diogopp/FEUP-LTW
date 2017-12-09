@@ -1,20 +1,22 @@
 <div id = "leftSideBar">
-  <h4><b>Filter by Category</b></h4>
-    <select id ="categoryFilter">
+  <h4><b>Filter by</b></h4>
+    <ul>
+      <li>Category</li>
+
+    <select id ="categoryFilter" onchange="myFunction()">
 <?php
 $stmt = $dbh->prepare('SELECT DISTINCT category
                      FROM CATEGORY
                      LEFT JOIN Element ON Element.idCategory = Category.idCategory
                      WHERE Element.idUser = ?');
 $stmt->execute(array($_SESSION['currentUser']));
+echo "<option value='none'>None</option>";
 while ( ($row = $stmt->fetch()) != null)
     echo "<option value='".$row['category']."'>".$row['category']."</option>";
 ?>
   </select>
-    <ul>
-      <li><a onclick="setDefaultOrder(1);" href="#" ></a></li>
-      <li><a onclick="setDefaultOrder(2);" href="#" >Search</a></li>
-    </ul>
+  <li>Search</li>
+</ul>
 
   <h4><b>Sort by</b></h4>
     <ul>
@@ -28,4 +30,8 @@ function setDefaultOrder(x)
 	{
 		let defaultOrder = x;
 	}
+function myFunction() {
+    var x = document.getElementById("categoryFilter").value;
+    document.getElementById("test").innerHTML = "You selected: " + x;
+}
 </script>

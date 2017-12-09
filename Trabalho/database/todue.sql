@@ -17,7 +17,8 @@ CREATE TABLE USER(
 	password TEXT,
 	pathImage TEXT,
 	sexo TEXT,
-	dataRegisto TEXT
+	dataRegisto TEXT,
+	extra TEXT
 );
 
 
@@ -43,11 +44,11 @@ COMMIT;
 --Populating USER table
 
 
-insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto ) values (90, 'root', '1/23/2001', 'root', 'ornare consequat', 'in', '12/17/2016');
-insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto ) values (28, 'amet eros', '9/16/2004', 'ReuXf2Iu', 'suspendisse potenti', 'odio', '5/24/2017');
-insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto ) values (31, 'ipsum', '2/8/2002', '9BP63Czxe', 'magna', 'eget massa', '2/25/2017');
-insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto ) values (100, 'eu', '11/12/2000', 'BIfj7GzYM0', 'id', 'eget orci', '6/15/2017');
-insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto ) values (93, 'nulla sed', '3/23/2005', 'pHrheCeNBwz2', 'quis turpis', 'auctor', '7/8/2017');
+insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto, extra) values (90, 'root', '1/23/2001', 'root', 'ornare consequat', 'in', '12/17/2016','I am the Root of all evil');
+insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto, extra) values (28, 'amet eros', '9/16/2004', 'ReuXf2Iu', 'suspendisse potenti', 'odio', '5/24/2017','');
+insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto, extra) values (31, 'ipsum', '2/8/2002', '9BP63Czxe', 'magna', 'eget massa', '2/25/2017','');
+insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto, extra) values (100, 'eu', '11/12/2000', 'BIfj7GzYM0', 'id', 'eget orci', '6/15/2017','teste Extra');
+insert into USER (idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto, extra) values (93, 'nulla sed', '3/23/2005', 'pHrheCeNBwz2', 'quis turpis', 'auctor', '7/8/2017','asd');
 
 --Populating CATEGORY table
 
