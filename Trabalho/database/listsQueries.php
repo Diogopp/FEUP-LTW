@@ -33,16 +33,7 @@ function getAllElements($dbh) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 }
-function getElementsByCategory($dbh, $category) {
-  try{
-  $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idCategory = ?');
-  $stmt->execute(array($category));
-  return $stmt->fetchAll();
-  }
-  catch (Exception $e) {
-   echo 'Caught exception: ',  $e->getMessage(), "\n";
-  }
-}
+
 function getMaxElementID($dbh){
   try{
     $stmt = $dbh->prepare('SELECT idElement FROM Element ORDER BY idElement DESC LIMIT 1');

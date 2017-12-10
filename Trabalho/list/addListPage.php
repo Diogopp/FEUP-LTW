@@ -7,13 +7,18 @@
 <!--idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto  -->
 
 <div id = "newList">
-  <form id ="addList" method="post" action = "addList.php">
+  <!-- <form id ="addList" method="post" action = "addList.php"> -->
 
-    <label>List Name: </label>
-    <input type='text' name='listName' placeholder='Type the new list name here' required />
-    <br>
+    <label>Category Name: </label>
+    <input type='text' name='listName' placeholder='Type the name here' required />
 
-    <label>Task 1: </label>
+    <label>Number of Tasks:  </label>
+    <input type="number" value = "0" id ="numTasks" min="0" max="10">
+
+    <div id = "newListTasks">
+    </div>
+
+    <!-- <label>Task 1: </label>
     <input type='text' name='task1' placeholder='Type the Task here'/>
     <label>Deadline: </label>
     <input type="date" name="deadline1" />
@@ -29,10 +34,10 @@
     <input type='text' name='task3' placeholder='Type the Task here'/>
     <label>Deadline: </label>
     <input type="date" name="deadline3" />
-    <br>
+    <br> -->
 
-  <button id ="addNewList" type="submit">Add new List</button>
-</form>
+  <button id ="addNewList" onclick="generateTasks()">Generate Tasks</button>
+<!-- </form> -->
 </div>
 
 <?php include_once('../templates/footer.php'); ?>
