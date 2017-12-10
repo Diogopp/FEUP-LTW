@@ -25,9 +25,10 @@
 
 <script type="text/javascript">
 function setDefaultOrder(x)
-	{
-		let defaultOrder = x;
-	}
+  {
+    let defaultOrder = x;
+  }
+
 function showCategory(cat) {
   if (cat == "") {
     document.getElementById("tasks").innerHTML = "";
@@ -37,13 +38,20 @@ function showCategory(cat) {
       xhttp = new XMLHttpRequest();
   else  // code for IE6, IE5
       xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("tasks").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "../database/getCategory.php?c="+cat, true);
-  xhttp.send();
+  xhttp.open("POST", "../database/getCategory.php", true);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  xhttp.send(encodeForAjax({category: cat}));
 }
+
+  function encodeForAjax(data) {
+    return Object.keys(data).map(function(k){
+    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&');
+  }
+
 </script>
