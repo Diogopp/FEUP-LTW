@@ -9,11 +9,6 @@ if (document.getElementById("logout") != null)
       window.location.href="../user/logout.php";
 }
 
-if (document.getElementById("addItem") != null)
-  document.getElementById("addItem").onclick = function(event){
-      window.location.href="../list/addItem.php";
-}
-
 if (document.getElementById("addLis") != null)
   document.getElementById("addLis").onclick = function(event){
       window.location.href="../list/addListPage.php";
@@ -59,8 +54,6 @@ showCategory = function(cat){
   xhttp.send(encodeForAjax({category: cat}));
 }
 
-
-
 generateTasks = function(){
   let listName = document.getElementById("listName").value;
   if (listName == ""){
@@ -85,6 +78,26 @@ generateTasks = function(){
   xhttp.open("GET", "../list/addNumTasks.php?num="+tasks+"&name="+listName, true);
   xhttp.send();
 }
+
+addTask = function(){
+  if(document.getElementById("categoryFilter") == null)
+    return;
+
+  let categ = document.getElementById("categoryFilter").value;
+  if (window.XMLHttpRequest)    // code for modern browsers
+      xhttp = new XMLHttpRequest();
+  else  // code for IE6, IE5
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       document.getElementById("addTask").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "../list/addItemForm.php", true);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  xhttp.send(encodeForAjax({category: categ}));
+  }
 
 // updateElementFromList = function(id){
 //   if (confirm("Are you sure you want to remove the task at hand?")){

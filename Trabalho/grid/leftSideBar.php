@@ -3,7 +3,7 @@
     <ul>
       <li>Category</li>
         <select id ="categoryFilter" onchange="showCategory(this.value)">
-          <option value='None'>None</option>
+          <option value='None'>All Tasks</option>
             <?php
               $stmt = $dbh->prepare('SELECT DISTINCT category
                                    FROM CATEGORY

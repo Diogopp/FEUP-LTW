@@ -1,13 +1,10 @@
 
 <section id = "mainSection">
-  <form id ="updateList" method ="post" action ="../list/updateList.php">
   <div id ="tasks">
 <?php
   getAllElements($dbh);
 ?>
   </div>
-    <button id = "upList" type="submit" >UpdateList</button>
- </form>
-    <button id ="addItem" type="button" >Add Item </button>
+    <button id ="addItem" type="button" onclick="addTask()" >Add Item </button>
     <br>
 </section>

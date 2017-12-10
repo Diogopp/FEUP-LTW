@@ -28,6 +28,10 @@ function getAllElements($dbh) {
       echo' </tr>';
     }
     echo '</table>';
+
+    echo '
+        <div id = "addTask">
+        </div>';
    }
    catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
@@ -118,11 +122,19 @@ function sortByCategory($dbh, $categor) {
                   <td>'. $row['deadLine'].'</td>';
             if ($row['done'])
               echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
-            else
+            else{
               echo ' <td> <input type="checkbox" name="checkbox" </td>';
+              echo'
+               <td>
+                <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i class="fa fa-close"></i></button>
+              </td>';
+            }
             echo' </tr>';
             }
       echo '</table>';
+      echo '
+          <div id = "addTask">
+          </div>';
     }
 
    catch (Exception $e) {
