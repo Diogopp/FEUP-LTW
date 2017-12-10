@@ -6,7 +6,7 @@
 <div id = "newList">
 
     <label>Category Name: </label>
-    <input type='text' id = 'listName' placeholder='Type the name here' required />
+    <input type='text' id = 'listName' placeholder='Type the name' required />
 
     <label>Number of Tasks:  </label>
     <input type="number" value = "0" id ="numTasks" min="0">

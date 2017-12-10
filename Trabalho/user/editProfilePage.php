@@ -14,19 +14,19 @@
       $stmt->execute(array($_SESSION['currentUser']));
       $row = $stmt->fetch();
 
-      echo 'Name: ';
+      echo '<label>Name: </label>';
       echo "<input type='text' name='username' placeholder='username' value=".$row['name']." />";
       echo '<br>';
 
-      echo "Birthdate: ";
+      echo "<label>Birthdate: </label>";
       echo "<input type='date' name='birthdate' placeholder='birthdate' value=".$row['dataNascimento']."  />";
       echo '<br>';
 
-      echo "Password: ";
+      echo "<label>Password: </label>";
       echo "<input type='password' name='password' placeholder='password' value=".$row['password']."  />";
       echo '<br>';
 
-      echo "Gender: <br>";
+      echo "<label>Gender: </label><br>";
       if ($row['sexo'] == "male"){
         echo '<input type="radio" name="gender" value="male" checked="checked"> Male<br>
           <input type="radio" name="gender" value="female"> Female<br>
@@ -49,7 +49,7 @@
       }
       echo '<br>';
 
-      echo "Extra Information: ";
+      echo "<label>Extra Information: </label>";
       echo "<input type='text' name='extra' placeholder='Extra information...'/>";
     //  echo "<input type='text' name='extra' placeholder='Extra information...' value = ".$row['extra']."/>";
       echo '<br>';
