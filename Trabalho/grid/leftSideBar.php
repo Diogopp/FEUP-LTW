@@ -4,7 +4,7 @@
       <li>Category</li>
 
     <select id ="categoryFilter" onchange="showCategory(this.value)">
-      <option value='none'>None</option>
+      <option value='None'>None</option>
 <?php
   $stmt = $dbh->prepare('SELECT DISTINCT category
                        FROM CATEGORY
@@ -31,9 +31,7 @@ function setDefaultOrder(x)
 		let defaultOrder = x;
 	}
 function showCategory(cat) {
-    // var x = document.getElementById("categoryFilter").value;
-    // document.getElementById("test").innerHTML = "You selected: " + cat;
-    // var xhttp;
+  alert(cat);
   if (cat == "") {
     document.getElementById("tasks").innerHTML = "";
     return;
