@@ -33,26 +33,57 @@ removeElementFromList = function(id){
     }
 }
 
+encodeForAjax = function(data){
+    return Object.keys(data).map(function(k){
+    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&');
+}
+
+
+showCategory = function(cat){
+  if (cat == "") {
+    document.getElementById("tasks").innerHTML = "";
+    return;
+  }
+  if (window.XMLHttpRequest)    // code for modern browsers
+      xhttp = new XMLHttpRequest();
+  else  // code for IE6, IE5
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("tasks").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "../database/getCategory.php", true);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  xhttp.send(encodeForAjax({category: cat}));
+}
+
+
+
 generateTasks = function(){
+  let listName = document.getElementById("listName").value;
+  if (listName == ""){
+    alert("The Category field can't be empty!");
+    return;
+  }
   let tasks = document.getElementById("numTasks").value;
-  alert(tasks);
-   if (tasks == 0) {
-     document.getElementById("newListTasks").innerHTML = "";
-     alert("her");
-     return;
-   }
-  // if (window.XMLHttpRequest)    // code for modern browsers
-  //     xhttp = new XMLHttpRequest();
-  // else  // code for IE6, IE5
-  //     xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  //
-  // xhttp.onreadystatechange = function() {
-  //   if (this.readyState == 4 && this.status == 200) {
-  //     document.getElementById("tasks").innerHTML = this.responseText;
-  //   }
-  // };
-  // xhttp.open("GET", "../database/getCategory.php?c="+cat, true);
-  // xhttp.send();
+
+  if (window.XMLHttpRequest)    // code for modern browsers
+      xhttp = new XMLHttpRequest();
+  else  // code for IE6, IE5
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      if (tasks == 0)
+         document.getElementById("newListTasks").innerHTML = "";
+      else
+         document.getElementById("newListTasks").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "../list/addNumTasks.php?num="+tasks+"&name="+listName, true);
+  xhttp.send();
 }
 
 // updateElementFromList = function(id){

@@ -7,4 +7,6 @@ $category = $_POST['category'];
 
 if ($category != "None")
   sortByCategory($dbh, $category);
+else
+  getAllElements($dbh);
 ?>
