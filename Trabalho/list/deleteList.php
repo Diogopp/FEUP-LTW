@@ -2,21 +2,25 @@
   session_start();
   include(__DIR__ . '/../database/connection.php');
  try{
-      $stmt = $dbh->prepare('SELECT category
-                             FROM CATEGORY
-                             LEFT JOIN Element ON Element.idCategory = Category.idCategory
-                             WHERE Element.idUser = ?');
 
-      $stmt->execute(array($_SESSION['currentUser']));
-      if ($stmt->fetch()!= NULL ){
-        $stmt = $dbh->prepare('DELETE FROM category WHERE idCategory = ?');
-        $stmt->execute(array($_GET['id']));
-      }
-      header("Location: ../index.php");
+    echo $_POST['listName'];
+    echo print_r($_POST);
 
-    }
-    catch (Exception $e) {
-      echo 'Caught exception: ',  $e->getMessage(), "\n";
-    }
+    $stmt = $dbh->prepare('SELECT idCategory FROM Category WHERE category = ?');
+    $stmt->execute(array($_POST['listName']));
+    $row = $stmt->fetch();
+    $id = $row['idCategory'];
+
+    $stmt = $dbh->prepare('DELETE FROM ELEMENT WHERE idCategory = ?');
+    $stmt->execute(array($id));
+
+    $stmt = $dbh->prepare('DELETE FROM category WHERE category = ?');
+    $stmt->execute(array($_POST['listName']));
+    header("Location: ../index.php");
+
+   }
+  catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }
 
 ?>

@@ -16,11 +16,17 @@ if (document.getElementById("addLis") != null)
 
 if (document.getElementById("remLis") != null)
   document.getElementById("remLis").onclick = function(event){
-      window.location.href="../list/deleteList.php";
+      window.location.href="../list/deleteListPage.php";
 }
 
+if (document.getElementById("remLis") != null)
+  document.getElementById("remLis").onclick = function(event){
+      window.location.href="../list/deleteListPage.php";
+}
+
+
 removeElementFromList = function(id){
-  if (confirm("Are you sure you want to remove the task at hand?")){
+  if (confirm("Are you sure you want to remove the task?")){
       let url = '../list/deleteItem.php?id=' + id;
       console.log(url);
       window.location.href= url;
@@ -97,7 +103,33 @@ addTask = function(){
   xhttp.open("POST", "../list/addItemForm.php", true);
   xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
   xhttp.send(encodeForAjax({category: categ}));
+}
+
+getSimilarList = function(cat){
+  if (cat == "") {
+    document.getElementById("listDiv").innerHTML = "";
+    return;
   }
+  if (window.XMLHttpRequest)    // code for modern browsers
+      xhttp = new XMLHttpRequest();
+  else  // code for IE6, IE5
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("listDiv").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "../database/getSimilarCategory.php", true);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  xhttp.send(encodeForAjax({category: cat}));
+}
+
+setLabelValue = function(category){
+  document.getElementById("listName").value = category;
+  document.getElementById("listDiv").innerHTML = "";
+}
+
 
 // updateElementFromList = function(id){
 //   if (confirm("Are you sure you want to remove the task at hand?")){
