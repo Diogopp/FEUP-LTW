@@ -15,5 +15,6 @@
     <button id ="remLis">Remove List</button>
     <br>
   </div>
-
+  <br>
+  <img id = "timeGif" src="../assets/time.gif" alt="quotes gif" width=90%>
 </div>
