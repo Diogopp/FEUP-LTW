@@ -6,8 +6,8 @@ body {
     background-position: center center;
     background-size: cover;
     background: url("../assets/background.png");
-     background-repeat: no-repeat;
-     background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a {
@@ -478,4 +478,8 @@ input {
 #delete:hover{
 background: #103b59;
 color: white;
+}
+
+#timeGif{
+  border: 5px double #1c4059;
 }
