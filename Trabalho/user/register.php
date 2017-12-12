@@ -30,7 +30,7 @@
 
     $stmt = $dbh->prepare('INSERT INTO USER(idUser ,name, dataNascimento, password, pathImage, sexo, dataRegisto)
     Values(?, ?, ?, ?, ?, ?, ?)');
-    $stmt->execute(array($idUser, $_POST['username'], $_POST['birthdate'], $_POST['password'], $pathImage, $_POST['gender'], $date));
+    $stmt->execute(array($idUser, $_POST['username'], $_POST['birthdate'], md5($_POST['password']), $pathImage, $_POST['gender'], $date));
 
   }
     catch (Exception $e) {

@@ -3,7 +3,7 @@
   include(__DIR__ . '/../database/connection.php');
  try{
       $stmt = $dbh->prepare('SELECT idUser FROM User WHERE name = ? AND password = ?');
-      $stmt->execute(array($_POST['userLog'], $_POST['passLog']));
+      $stmt->execute(array($_POST['userLog'], md5($_POST['passLog'])));
       if ( ($row = $stmt->fetch()) != NULL){
           $_SESSION['currentUser']= $row['idUser'];
           header("Location: ../index.php");
