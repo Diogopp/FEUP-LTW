@@ -17,6 +17,7 @@
  if (isset($_SESSION['currentUser'])){
    echo '
      <div class = "gridContainer">';
+     include_once("../grid/dateBar.php");
      include_once("../grid/leftSideBar.php");
      include_once("../grid/mainBar.php");
      include_once("../grid/rightSideBar.php");

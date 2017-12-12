@@ -19,7 +19,6 @@ header {
   right: 0;
   left: 0;
   top: 0;
-  padding: 1rem;
   background-color: white;
 }
 
@@ -144,11 +143,25 @@ footer {
 }
 
 /*************************TASK*********************/
+#dateBar {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+#dateBar >h3{
+  font-size: 1em;
+  margin-bottom:0rem;
+}
+
 #leftSideBar {
   grid-column-start: 1;
   grid-column-end: 1;
-  grid-row-start: 1;
-  grid-row-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
   padding-left: 1em;
   border-right: 5px double grey;
 }
@@ -156,8 +169,8 @@ footer {
 #mainSection {
   grid-column-start: 2;
   grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
   width: 40em;
   margin: 0;
   padding-top: 1.3em;
@@ -166,8 +179,8 @@ footer {
 #rightSideBar {
   grid-column-start: 3;
   grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
   padding-right:0em;
   border-left: 5px double grey;
   text-align: center;
