@@ -22,7 +22,7 @@ function getAllElements($dbh) {
         echo ' <td> <input type="checkbox" onchange="setTaskDone('.$row['idElement'].')" id="'.$row['idElement'].'" </td>';
         echo'
          <td>
-          <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i class="fa fa-close"></i></button>
+          <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i id = "fa_'.$row['idElement'].'" class="fa fa-close"></i></button>
         </td>';
       }
       echo' </tr>';

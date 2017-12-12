@@ -28,7 +28,6 @@ if (document.getElementById("remLis") != null)
 removeElementFromList = function(id){
   if (confirm("Are you sure you want to remove the task?")){
       let url = '../list/deleteItem.php?id=' + id;
-      console.log(url);
       window.location.href= url;
 
     }
@@ -139,6 +138,8 @@ setTaskDone = function(task){
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById(task).disabled = true;
+      document.getElementById("fa_"+task).remove();
+      document.getElementById("rem_"+task).remove();
     }
   };
   xhttp.open("POST", "../database/setTaskDone.php", true);
