@@ -14,7 +14,7 @@
         <input type='text' id = "searchBar" name = "searchBar" placeholder="Search for a task..." onkeyup="getSearch(this.value)" />
     </ul>
   </section>
-    <section id ="sorts" style="float:left; padding-left:10%">
+    <section id ="sorts">
   <h4><b>Sort by</b></h4>
     <ul>
       <li><a href="" id = "sortAlpha" >Alphabetically</a></li>

@@ -160,7 +160,7 @@ footer {
   margin-bottom:0;
 }
 
-#leftSideBar {
+#leftSideBar{
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -168,7 +168,16 @@ footer {
   padding-left: 1em;
 }
 
-#mainSection {
+#filters{
+  float: left;
+}
+
+#sorts{
+  float: left;
+  padding-left: 10%;
+}
+
+#mainSection{
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 3;
