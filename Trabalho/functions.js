@@ -130,6 +130,8 @@ setLabelValue = function(category){
 }
 
 setTaskDone = function(task){
+  if (!confirm("Have you finished this task?"))
+    return;
   if (window.XMLHttpRequest)    // code for modern browsers
       xhttp = new XMLHttpRequest();
   else  // code for IE6, IE5
@@ -147,12 +149,20 @@ setTaskDone = function(task){
   xhttp.send(encodeForAjax({task: task}));
 }
 
+getSearch = function(task){
+  if (window.XMLHttpRequest)    // code for modern browsers
+      xhttp = new XMLHttpRequest();
+  else  // code for IE6, IE5
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
-// updateElementFromList = function(id){
-//   if (confirm("Are you sure you want to remove the task at hand?")){
-//       let url = '../list/deleteItem.php?id=' + id;
-//       console.log(url);
-//       window.location.href= url;
-//
-//     }
-// }
+  let currentCategory = document.getElementById("categoryFilter").value;
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("tasks").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "../database/getSearchTask.php", true);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  xhttp.send(encodeForAjax({task: task, category: currentCategory}));
+}

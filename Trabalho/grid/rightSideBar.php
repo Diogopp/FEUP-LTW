@@ -1,7 +1,10 @@
 <div id = "rightSideBar">
   <!-- <img id = "userPhoto" src="../assets/me.png" alt="User Photo" width=90%> -->
   <h4><b> <b></h4>
-    <?php getUserName($dbh); ?>
+    <?php
+    $user = getUserName($dbh);
+    echo 'Name: '. $user['name'];
+     ?>
   <br>
   <button id="profile">Profile</button>
   <br>

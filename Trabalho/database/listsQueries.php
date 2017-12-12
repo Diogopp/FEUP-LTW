@@ -1,73 +1,128 @@
 <?php
 function getAllElements($dbh) {
     try{
-    $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idUser = ?');
-    $stmt->execute(array($_SESSION['currentUser']));
-    echo '
-      <table style="width:100%">
-          <tr>
-            <th align="left">Task</th>
-            <th align="left">Deadline</th>
-            <th align="left">Done</th>
-            </tr>';
-    while($row = $stmt->fetch()){
-      $deadline = date('d/m/Y', strtotime( $row['deadLine']));
+      $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idUser = ?');
+      $stmt->execute(array($_SESSION['currentUser']));
       echo '
-          <tr>
-            <td>'. $row['tasks'].'</td>
-            <td>'. $deadline.'</td>';
-      if ($row['done'])
-        echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
-      else{
-        echo ' <td> <input type="checkbox" onchange="setTaskDone('.$row['idElement'].')" id="'.$row['idElement'].'" </td>';
-        echo'
-         <td>
-          <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i id = "fa_'.$row['idElement'].'" class="fa fa-close"></i></button>
-        </td>';
+        <table style="width:100%">
+            <tr>
+              <th align="left">Task</th>
+              <th align="left">Deadline</th>
+              <th align="left">Done</th>
+              </tr>';
+      while($row = $stmt->fetch()){
+        $deadline = date('d/m/Y', strtotime( $row['deadLine']));
+        echo '
+            <tr>
+              <td>'. $row['tasks'].'</td>
+              <td>'. $deadline.'</td>';
+        if ($row['done'])
+          echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
+        else{
+          echo ' <td> <input type="checkbox" onchange="setTaskDone('.$row['idElement'].')" id="'.$row['idElement'].'" </td>';
+          echo'
+           <td>
+            <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i id = "fa_'.$row['idElement'].'" class="fa fa-close"></i></button>
+          </td>';
+        }
+        echo' </tr>';
       }
-      echo' </tr>';
-    }
-    echo '</table>';
+      echo '</table>';
 
-    echo '
-        <div id = "addTask">
-        </div>';
-   }
+      echo '
+          <div id = "addTask">
+          </div>';
+    }
    catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 }
 
-function getMaxElementID($dbh){
-  try{
-    $stmt = $dbh->prepare('SELECT idElement FROM Element ORDER BY idElement DESC LIMIT 1');
-    $stmt->execute();
-    if( ($row = $stmt->fetch()) == null)
-      $row['idElement'] = 0;
-    return $row['idElement'];
+function getAllListsFromUser($dbh){
+  $stmt = $dbh->prepare('SELECT DISTINCT category
+                       FROM CATEGORY
+                       LEFT JOIN Element ON Element.idCategory = Category.idCategory
+                       WHERE Element.idUser = ?');
+  $stmt->execute(array($_SESSION['currentUser']));
+  return $stmt->fetchAll();
+}
+
+function getTaskSearch($dbh, $task, $category){
+  try {
+   if ($category == "None"){
+     $stmt = $dbh->prepare('SELECT * FROM Element
+                            WHERE Element.idUser = ? AND
+                            upper(tasks) LIKE upper(?)');
+     $stmt->execute(array($_SESSION['currentUser'], "$task%"));
+    }
+   else {
+     $stmt = $dbh->prepare('SELECT idCategory FROM Category WHERE category = ?');
+     $stmt->execute(array($category));
+     $row = $stmt->fetch();
+     $category = $row['idCategory'];
+     $stmt = $dbh->prepare('SELECT * FROM Element
+                            WHERE Element.idUser = ? AND Element.idCategory = ? AND
+                            upper(tasks) LIKE upper(?)');
+
+     $stmt->execute(array($_SESSION['currentUser'],$category, "$task%"));
+   }
+   // echo $stmt->rowCount();
+   // if ($stmt->rowCount() == 0){
+   //    echo "<label> Nothing was found </label>";
+   //    return;
+   //    }
+   echo '
+     <table style="width:100%">
+         <tr>
+           <th align="left">Task</th>
+           <th align="left">Deadline</th>
+           <th align="left">Done</th>
+           </tr>';
+
+   while($row = $stmt->fetch()){
+     $deadline = date('d/m/Y', strtotime( $row['deadLine']));
+     echo '
+         <tr>
+           <td>'. $row['tasks'].'</td>
+           <td>'. $deadline.'</td>';
+     if ($row['done'])
+       echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
+     else{
+       echo ' <td> <input type="checkbox" onchange="setTaskDone('.$row['idElement'].')" id="'.$row['idElement'].'" </td>';
+       echo'
+        <td>
+         <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i id = "fa_'.$row['idElement'].'" class="fa fa-close"></i></button>
+       </td>';
+     }
+     echo' </tr>';
+   }
+   echo '</table>';
+
+   echo '
+       <div id = "addTask">
+       </div>';
   }
   catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
+   echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 }
-function getMaxCategoryID($dbh){
-  try{
-    $stmt = $dbh->prepare('SELECT idCategory FROM CATEGORY ORDER BY idCategory DESC LIMIT 1');
-    $stmt->execute();
-    if( ($row = $stmt->fetch()) == null)
-      $row['idCategory'] = 0;
-    return $row['idCategory'];
-  }
-  catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
-  }
+
+function getCategorySearch($dbh, $category){
+
+   $stmt = $dbh->prepare('SELECT DISTINCT category FROM CATEGORY
+                          LEFT JOIN Element ON Element.idCategory = Category.idCategory
+                          WHERE Element.idUser = ? AND
+                          upper(category) LIKE upper(?) LIMIT 10');
+
+   $stmt->execute(array($_SESSION['currentUser'],"$category%"));
+   return $stmt->fetchAll();
 }
+
 function getUserName($dbh) {
   try{
     $stmt = $dbh->prepare('SELECT name FROM USER WHERE idUser = ?');
     $stmt->execute(array($_SESSION['currentUser']));
-    $row = $stmt->fetch();
-    echo 'Name: '. $row['name'];
+    return $row = $stmt->fetch();
   }
  catch (Exception $e) {
   echo 'Caught exception: ',  $e->getMessage(), "\n";
@@ -101,7 +156,7 @@ function sortAphabetic($dbh) {
 
  catch (Exception $e) {
   echo 'Caught exception: ',  $e->getMessage(), "\n";
-}
+  }
 }
 
 function sortByCategory($dbh, $categor) {

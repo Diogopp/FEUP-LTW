@@ -3,9 +3,6 @@
   include(__DIR__ . '/../database/connection.php');
  try{
 
-    echo $_POST['listName'];
-    echo print_r($_POST);
-
     $stmt = $dbh->prepare('SELECT idCategory FROM Category WHERE category = ?');
     $stmt->execute(array($_POST['listName']));
     $row = $stmt->fetch();

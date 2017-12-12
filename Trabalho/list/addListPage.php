@@ -9,12 +9,16 @@
     <input type='text' id = 'listName' placeholder='Type the name' required />
 
     <label>Number of Tasks:  </label>
-    <input type="number" value = "0" id ="numTasks" min="0">
+    <input type="number" value = "1" id ="numTasks" min="1">
     <br>
-    <button id ="addNewList" onclick="generateTasks()">Generate Tasks</button>
 
     <div id = "newListTasks">
     </div>
+
+    <button id ="addNewList" onclick="generateTasks()">Generate Tasks</button>
+
+    <button id = 'exitNewList' onclick="window.location.href='../index.php'">Go back</button>
+
 
 </div>
 
