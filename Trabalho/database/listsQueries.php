@@ -19,7 +19,7 @@ function getAllElements($dbh) {
       if ($row['done'])
         echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
       else{
-        echo ' <td> <input type="checkbox" name="checkbox_'.$row['idElement'].'" </td>';
+        echo ' <td> <input type="checkbox" onchange="setTaskDone('.$row['idElement'].')" id="'.$row['idElement'].'" </td>';
         echo'
          <td>
           <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i class="fa fa-close"></i></button>

@@ -130,6 +130,22 @@ setLabelValue = function(category){
   document.getElementById("listDiv").innerHTML = "";
 }
 
+setTaskDone = function(task){
+  if (window.XMLHttpRequest)    // code for modern browsers
+      xhttp = new XMLHttpRequest();
+  else  // code for IE6, IE5
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById(task).disabled = true;
+    }
+  };
+  xhttp.open("POST", "../database/setTaskDone.php", true);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  xhttp.send(encodeForAjax({task: task}));
+}
+
 
 // updateElementFromList = function(id){
 //   if (confirm("Are you sure you want to remove the task at hand?")){

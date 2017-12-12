@@ -14,6 +14,8 @@
   </form>
   <div id = "listDiv">
   </div>
+
+  <button id = 'exitDeleteList' onclick="window.location.href='../index.php'">Go back</button>
 </div>
 
 
