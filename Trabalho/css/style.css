@@ -5,6 +5,9 @@ body {
     background-color: white;
     background-position: center center;
     background-size: cover;
+    background: url("../assets/background.png");
+     background-repeat: no-repeat;
+     background-size: cover;
 }
 
 a {
@@ -19,7 +22,6 @@ header {
   right: 0;
   left: 0;
   top: 0;
-  background-color: white;
   position: sticky;
   padding-bottom: 0.5em;
 }
@@ -39,7 +41,6 @@ footer {
   margin-top: 90%;
   height: 10%;
   padding: 1rem;
-  background-color: white;
   text-align: center;
 }
 
@@ -189,7 +190,6 @@ footer {
   display:grid;
   grid-template-columns: 25% 75%;
   grid-template-rows: auto;
-  background-color: white;
   color: #474242;
 }
 /******RIGHT SIDE BAR*******/
