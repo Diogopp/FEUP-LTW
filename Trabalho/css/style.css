@@ -20,6 +20,8 @@ header {
   left: 0;
   top: 0;
   background-color: white;
+  position: sticky;
+  padding-bottom: 0.5em;
 }
 
 header >h1 {
@@ -174,6 +176,8 @@ footer {
   width: 40em;
   margin: 0;
   padding-top: 1.3em;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 #rightSideBar {
@@ -181,7 +185,6 @@ footer {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 2;
-  padding-right:0em;
   border-left: 5px double grey;
   text-align: center;
 }
@@ -330,12 +333,12 @@ background: #103b59;
 color: white;
 }
 
-#exitProfile{
+#exit{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #1c4059;
-  width: 25%;
+  width: 10%;
   padding: 15px;
   color: #FFFFFF;
   font-size: 12px;
@@ -343,12 +346,20 @@ color: white;
   cursor: pointer;
 }
 
-#exitProfile:hover{
+#exit:hover{
 background: #103b59;
 color: white;
 }
 
+#profilePage{
+  padding-left:2em;
+}
+
 /*************************EDIT PROFILE*********************/
+#profileEdit{
+  padding-left:2em;
+}
+
 #editProfilePage{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -400,6 +411,10 @@ color: white;
 }
 
 /*************************ADD ITEM/LIST*********************/
+#newList{
+  padding-left:2em;
+}
+
 #add{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -451,3 +466,21 @@ input {
   text-align: right;
   font-size: 15px;
 }​
+
+#delete{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#delete:hover{
+background: #103b59;
+color: white;
+}

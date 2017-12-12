@@ -1,5 +1,5 @@
 <div id = "rightSideBar">
-  <!-- <img id = "userPhoto" src="../assets/me.png" alt="User Photo" width=90%> -->
+  <img id = "userPhoto" src="../assets/me.png" alt="User Photo" width=90%>
   <h4><b> <b></h4>
     <?php
     $user = getUserName($dbh);
@@ -8,7 +8,7 @@
   <br>
   <button id="profile">Profile</button>
   <br>
-  <button id="logout">Logout</button>
+  <button id="logout">Log out</button>
   <div id = "listOptions">
     <button id ="addLis">Add List</button>
     <br>

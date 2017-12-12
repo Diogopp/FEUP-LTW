@@ -16,8 +16,8 @@
     </div>
 
     <button id ="addNewList" onclick="generateTasks()">Generate Tasks</button>
-
-    <button id = 'exitNewList' onclick="window.location.href='../index.php'">Go back</button>
+<br>
+    <button id = 'exit' onclick="window.location.href='../index.php'">Go back</button>
 
 
 </div>

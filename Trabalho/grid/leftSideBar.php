@@ -17,4 +17,7 @@
       <li><a href="" id = "sortAlpha" >Alphabetically</a></li>
       <li><a href="" id = "sortTimes" >Timestamp</a></li>
     </ul>
+<br>
+<br>
+    <img id = "timeGif" src="../assets/time.gif" alt="quotes gif" width=90%>
 </div>
