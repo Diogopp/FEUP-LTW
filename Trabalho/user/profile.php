@@ -38,8 +38,10 @@
   }
 ?>
   <button id='editProfile' onclick="window.location.href= 'editProfilePage.php'">Edit Profile</button>
+  <br>
+  <button id='exit' onclick="window.location.href='../index.php'">Go back</button>
 </div>
 
-<button id='exitProfile' onclick="window.location.href='../index.php'">Go back</button>
+
 
 <?php include_once('../templates/footer.php'); ?>

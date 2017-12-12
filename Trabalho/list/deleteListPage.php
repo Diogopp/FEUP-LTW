@@ -9,13 +9,13 @@
 
     <label>What is the list you wish to delete? </label>
     <input type='text' id = "listName" name = "listName" placeholder='Type for a list...' onkeyup="getSimilarList(this.value)" />
-    <button type="submit">Delete List</button>
+    <br>
+    <button id="delete" type="submit">Delete List</button>
 
   </form>
   <div id = "listDiv">
   </div>
-
-  <button id = 'exitDeleteList' onclick="window.location.href='../index.php'">Go back</button>
+  <button id = 'exit' onclick="window.location.href='../index.php'">Go back</button>
 </div>
 
 
