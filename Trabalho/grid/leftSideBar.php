@@ -1,4 +1,5 @@
-<div id = "leftSideBar">
+<div id = "leftSideBar" style="height:180px">
+  <section id ="filters" style="float:left;">
   <h4><b>Filter by</b></h4>
     <ul>
       <li>Category</li>
@@ -12,9 +13,13 @@
       <li>Search</li>
         <input type='text' id = "searchBar" name = "searchBar" placeholder="Search for a task..." onkeyup="getSearch(this.value)" />
     </ul>
+  </section>
+    <section id ="sorts" style="float:left; padding-left:10%">
   <h4><b>Sort by</b></h4>
     <ul>
       <li><a href="" id = "sortAlpha" >Alphabetically</a></li>
       <li><a href="" id = "sortTimes" >Timestamp</a></li>
     </ul>
+
+  </section>
 </div>
