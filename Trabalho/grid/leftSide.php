@@ -3,12 +3,10 @@
     <td style="width:200px; ">
       <div class="navBar">
         <h4><b> <b></h4>
-          <!-- <img id = "userPhoto" src="../assets/me.png" alt="User Photo" width=72.5%> -->
-        <?php
-        $user = getUserName($dbh);
-        echo 'Name: '. $user['name'];
-         ?>
-        <br>
+          <?php
+          $user = getUserName($dbh);
+          echo 'Name: '. $user['name'];
+           ?>
         <br>
         <button id="profile">Profile</button>
         <br>

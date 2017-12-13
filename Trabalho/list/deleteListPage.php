@@ -8,7 +8,7 @@
   <form method ="post" action="deleteList.php">
 
     <label>What is the list you wish to delete? </label>
-    <input type='text' id = "listName" name = "listName" placeholder='Type for a list...' onkeyup="getSimilarList(this.value)" />
+    <input type='text' id = "listName" name = "listName" placeholder='Type for a list...' onkeyup="getSimilarList(this.value)" required/>
     <div id = "listDiv">
     </div>
     <br>
@@ -17,6 +17,27 @@
   </form>
   <button id = 'exit' onclick="window.location.href='../index.php'">Go back</button>
 </div>
+
+
+<script type="text/javascript">
+
+	function categoryNotFound()
+	{
+		alert("That category does not exist!");
+	}
+	function failedChars()
+	{
+		alert("You can't use some of those characters!");
+	}
+
+  <?php
+  if (isset($_GET["specialChars"]))
+    echo "failedChars();";
+
+	if (isset($_GET["categoryNotFound"]))
+		echo "categoryNotFound();";
+  ?>
+</script>
 
 
 <?php include_once('../templates/footer.php'); ?>

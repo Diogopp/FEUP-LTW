@@ -7,7 +7,7 @@
 
     <label>Category Name: </label>
     <input type='text' id = 'listName' placeholder='Type the name' required />
-<br>
+    <br>
     <label>Number of Tasks:  </label>
     <input type="number" value = "1" id ="numTasks" min="1">
     <br>
@@ -17,10 +17,23 @@
     <br>
 
     <button id ="addNewList" onclick="generateTasks()">Generate Tasks</button>
-<br>
+    <br>
     <button id = 'exit' onclick="window.location.href='../index.php'">Go back</button>
 
-
 </div>
+
+<script type="text/javascript">
+
+	function failedChars()
+	{
+		alert("You can't use some of those characters!");
+	}
+
+  <?php
+  if (isset($_GET["specialChars"]))
+    echo "failedChars();";
+
+  ?>
+</script>
 
 <?php include_once('../templates/footer.php'); ?>

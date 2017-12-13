@@ -79,7 +79,7 @@ generateTasks = function(){
          document.getElementById("newListTasks").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "../list/addNumTasks.php?num="+tasks+"&name="+listName, true);
+  xhttp.open("GET", "../list/addNumTasks.php?num="+encodeURIComponent(tasks)+"&name="+encodeURIComponent(listName), true);
   xhttp.send();
 }
 

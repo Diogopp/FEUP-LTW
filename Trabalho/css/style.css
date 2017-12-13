@@ -37,7 +37,6 @@ input {
 }​
 
 /******************HEADER*****************/
-/* NOVO */
 header {
   width: 100%;
   font-family: 'Josefin Slab';
@@ -224,23 +223,11 @@ color: white;
 /**********************************************************************************/
 /**************************************TASK PAGE***********************************/
 /**********************************************************************************/
-.gridContainer{
-  width: 100%;
-  display:grid;
-  grid-template-columns: 25% 75%;
-  grid-template-rows: auto;
-  color: #474242;
-}
-
 table{
   width: 100%;
 }
 /*************************DATE BAR*********************/
 #dateBar {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 1;
   text-align: center;
   padding-bottom: 2em;
 }
@@ -251,21 +238,6 @@ table{
 }
 
 /*************************SORTS BAR*********************/
-#leftSideBar{
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  border-radius: 15px;
-  margin-left: 5%;
-  width: 85%;
-  z-index: 1;
-  background: white;
-  padding: 15px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  margin-bottom: 1em;
-}
-
 #filters{
   bottom: 20px;
 }
@@ -314,22 +286,15 @@ color: white;
 }
 
 /*************************PROFILE BAR*********************/
-#rightSideBar {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 4;
-  border-right: 5px double grey;
-  text-align: center;
-}
+/*border-right: 5px double grey;*/
 
-/* NOVO */
 .navBar{
   position: fixed;
   width: 300px;
   left: 0;
   top: 100px;
   margin-top:70px;
+  text-align: center;
 }
 
 /*user photo*/
@@ -424,22 +389,22 @@ color: white;
 /*************************TASKS BAR*********************/
 #tasks{
   margin-top: 20px;
+  padding-right: 40px; width:100%;
 }
 
-#mainSection{
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  padding-left: 2rem;
-  border-radius: 15px;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 85%;
-  z-index: 1;
-  background: white;
-  padding: 15px;
+#sortsTable{
+  border-radius:10px;
+  background-color: white;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+#tasksTable{
+  border-radius:10px;
+  background-color: white;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 15px;
 }
 
 /*add item button*/
@@ -626,7 +591,7 @@ color: white;
 }
 
 #listDiv label:hover{
-  background: #103b59;
+  background: #e8e3e3;
 }
 
 /*delete list button*/

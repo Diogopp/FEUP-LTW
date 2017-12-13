@@ -27,10 +27,17 @@ if (isset($_SESSION['currentUser']))
 	{
 		alert("Wrong login combination.");
 	}
+	function loginFailedChars()
+	{
+		alert("You can't use some of those characters!");
+	}
 
   <?php
-		if (isset($_GET["failed"]))
-			echo "loginFailed();";
+  if (isset($_GET["specialChars"]))
+    echo "loginFailedChars();";
+
+	if (isset($_GET["failed"]))
+		echo "loginFailed();";
   ?>
 </script>
 

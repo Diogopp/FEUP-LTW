@@ -4,8 +4,6 @@
   include_once('../templates/header.php');
  ?>
 
-<!--idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto  -->
-
 <div id = "profilePage">
   <?php
   try{
@@ -46,6 +44,18 @@
   <button id='exit' onclick="window.location.href='../index.php'">Go back</button>
 </div>
 
+<script type="text/javascript">
 
+	function failedChars()
+	{
+		alert("You can't use some of those characters!");
+	}
+
+  <?php
+  if (isset($_GET["specialChars"]))
+    echo "failedChars();";
+
+  ?>
+</script>
 
 <?php include_once('../templates/footer.php'); ?>

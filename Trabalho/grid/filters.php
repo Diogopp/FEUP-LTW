@@ -10,4 +10,5 @@
     </select>
      Search
     <input type='text' id = "searchBar" name = "searchBar" placeholder="Search for a task..." onkeyup="getSearch(this.value)" />
+
 </td>
