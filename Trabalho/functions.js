@@ -96,6 +96,7 @@ addTask = function(){
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        document.getElementById("addTask").innerHTML = this.responseText;
+       document.getElementById("addItem").remove();
     }
   };
   xhttp.open("POST", "../list/addItemForm.php", true);
