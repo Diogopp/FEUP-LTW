@@ -11,7 +11,7 @@
       die();
     }
 
-    if (!preg_match ("/^[a-zA-Z\s]+$/", $_POST['task'])){
+    if (!preg_match ("/^[A-Za-z0-9]+$/", $_POST['task'])){
       header("Location: ../index/index.php?specialChars");
       die();
     }

@@ -3,7 +3,7 @@
   include(__DIR__ . '/../database/connection.php');
  try{
 
-    if (!preg_match ("/^[a-zA-Z\s]+$/", $_POST['listName'])){
+    if (!preg_match ("/^[a-zA-Z\s][0-9]+$/", $_POST['listName'])){
        header("Location: deleteListPage.php?specialChars");
        die();
     }

@@ -10,12 +10,12 @@
       die();
     }
 
-    if (!preg_match ("/^[a-zA-Z\s]+$/", $_POST['username'])){
+    if (!preg_match ("/^[A-Za-z0-9]+$/", $_POST['username'])){
       header("Location: profile.php?specialChars");
       die();
     }
 
-    if (isset($_POST['extra']) && !preg_match ("/^[a-zA-Z\s]+$/", $_POST['extra'])) {
+    if (isset($_POST['extra']) && !preg_match ("/^[A-Za-z0-9]+$/", $_POST['extra'])) {
       header("Location: profile.php?specialChars");
       die();
     }

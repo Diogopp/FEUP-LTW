@@ -6,12 +6,12 @@
     <form id="register" method="post" action = "register.php" >
       <div class="block">
       <label  >Username: </label>
-      <input type="text" name="username" pattern="[a-zA-Z][\w]{2,10}[a-zA-Z]" placeholder="username" title="Lower and Uppercase, with 4-12 characters"  required/>
+      <input type="text" name="username" pattern="[a-zA-Z][\w]{2,10}[a-zA-Z]" placeholder="username" title="Lower and uppercase, with 4-12 characters"  required/>
       </div>
       <div class="block">
       <label>Password: </label>
       <input type="password" pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])([\w]){3,}(?!\1)[\w]"
-            name="password" placeholder="password" title="Lower and uppercase and a '+' or '*', with at least 5 characters"  required/>
+            name="password" placeholder="password" title="Lower and uppercase and a number, with at least 4 characters"  required/>
       </div>
       <div class="block">
       <label>Birthdate: </label>

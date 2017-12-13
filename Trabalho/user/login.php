@@ -2,11 +2,11 @@
   session_start();
   include(__DIR__ . '/../database/connection.php');
 
- if (!preg_match ("/^[a-zA-Z\s]+$/", $_POST['userLog'])){
+ if (!preg_match ("/^[A-Za-z0-9]+$/", $_POST['userLog'])){
     header("Location: ../index/index.php?specialChars");
     die();
  }
- if (!preg_match ("/^[a-zA-Z\s]+$/", $_POST['passLog'])){
+ if (!preg_match ("/^[A-Za-z0-9]+$/", $_POST['passLog'])){
    header("Location: ../index/index.php?specialChars");
    die();
  }
