@@ -14,7 +14,6 @@
         <br>
         <label>Category: </label>
         <input type="text" name="category" required/>';
-
       else
         echo '<input type="hidden" name="category" value="'.$_POST['category'].'" ></input>';
        ?>

@@ -3,15 +3,10 @@
   include(__DIR__ . '/../database/connection.php');
 
   try{
-      //VERIFICAR PATHIMAGEM PARA A TABLE
 
     $stmt = $dbh->prepare('SELECT name FROM USER');
     $stmt->execute();
     while($row = $stmt->fetch()){
-      echo "user: ".$_POST['username'];
-      echo "<br>";
-      echo "db: ".$row['name'];
-      echo "<br>";
       if ($_POST['username'] == $row['name']){
           header('Location: registerPage.php?regFailed');
           die();
@@ -19,6 +14,12 @@
     }
 
     $date = date('Y-m-d', time());
+
+    if ($date < $_POST['birthdate']){
+      header('Location: registerPage.php?dateFailed');
+      die();
+    }
+
     $pathImage = "0";
 
     //get max ID
@@ -28,10 +29,17 @@
 
     $idUser = $row['idUser'] + 1;
 
-    $stmt = $dbh->prepare('INSERT INTO USER(idUser ,name, dataNascimento, password, pathImage, sexo, dataRegisto)
-    Values(?, ?, ?, ?, ?, ?, ?)');
-    $stmt->execute(array($idUser, $_POST['username'], $_POST['birthdate'], md5($_POST['password']), $pathImage, $_POST['gender'], $date));
+    if (isset($_POST['extra'])){
+      $stmt = $dbh->prepare('INSERT INTO USER(idUser ,name, dataNascimento, password, pathImage, sexo, dataRegisto, extra)
+      Values(?, ?, ?, ?, ?, ?, ?, ?)');
+      $stmt->execute(array($idUser, $_POST['username'], $_POST['birthdate'], md5($_POST['password']), $pathImage, $_POST['gender'], $date, $_POST['extra']));
+    }
 
+    else {
+      $stmt = $dbh->prepare('INSERT INTO USER(idUser ,name, dataNascimento, password, pathImage, sexo, dataRegisto)
+      Values(?, ?, ?, ?, ?, ?, ?)');
+      $stmt->execute(array($idUser, $_POST['username'], $_POST['birthdate'], md5($_POST['password']), $pathImage, $_POST['gender'], $date));
+    }
   }
     catch (Exception $e) {
       echo 'Caught exception: ',  $e->getMessage(), "\n";

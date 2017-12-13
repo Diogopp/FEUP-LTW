@@ -5,6 +5,13 @@
 
   try{
 
+    $date = date('Y-m-d', time());
+
+    if ($_POST['deadline'] < $date){
+      header('Location: ../');
+      die();
+    }
+
     $stmt = $dbh->prepare('SELECT idCategory FROM Category WHERE category = ?');
     $stmt->execute(array($_POST['category']));
     if (($row = $stmt->fetch()) != null){

@@ -39,9 +39,16 @@
 		alert("The user already exists! Try again");
 	}
 
+  function dateFailed()
+	{
+		alert("That date is invalid! Try again");
+	}
+
   <?php
 		if (isset($_GET["regFailed"]))
 			echo "registerFailed();";
+    if (isset($_GET["dateFailed"]))
+			echo "dateFailed();";
   ?>
 </script>
 <?php include_once('../templates/footer.php'); ?>

@@ -28,8 +28,7 @@
     echo $registDate;
     echo '<br>';
     echo "<label>Extra information: </label>";
-  //  echo $row['extra'];
-    echo "Novo campo para meter info extra";
+    echo $row['extra'];
     echo '<br>';
 
    }

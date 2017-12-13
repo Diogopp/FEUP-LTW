@@ -30,6 +30,10 @@ function showTasks($elements){
   echo '
       <div id = "addTask">
       </div>';
+
+  echo '
+    <button id ="addItem" type="button" onclick="addTask()" >Add Item </button>
+    <br>';
 }
 function getAllElements($dbh) {
     try{
@@ -70,12 +74,14 @@ function getTaskSearch($dbh, $task, $category){
 
      $stmt->execute(array($_SESSION['currentUser'],$category, "$task%"));
    }
-   // echo $stmt->rowCount();
-   // if ($stmt->rowCount() == 0){
-   //    echo "<label> Nothing was found </label>";
-   //    return;
-   //    }
-   showTasks($stmt->fetchAll());
+
+   $result = $stmt->fetchAll();
+   if ($result == null){
+      echo "<label> Nothing was found </label>";
+      return;
+    }
+   else
+     showTasks($result);
 
   }
   catch (Exception $e) {
