@@ -151,8 +151,6 @@ setTaskDone = function(task){
 }
 
 getSearch = function(task){
-  // if(task == "")
-  //   document.getElementById("categoryFilter").value = "None";
 
   if (window.XMLHttpRequest)    // code for modern browsers
       xhttp = new XMLHttpRequest();

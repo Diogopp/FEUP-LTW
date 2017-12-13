@@ -1,6 +1,13 @@
 <?php
 
 function showTasks($elements){
+
+  if ($elements == null){
+     echo "<label id = 'noResults'> Nothing was found </label>";
+     return;
+   }
+
+  $elementsDone = array();
   echo '
     <table style="width:100%">
         <tr>
@@ -9,22 +16,34 @@ function showTasks($elements){
           <th align="left">Done</th>
           </tr>';
   foreach ($elements as $key => $row){
+    if ($row['done']) {
+      array_push($elementsDone,$row);
+      }
+    else{
     $deadline = date('d/m/Y', strtotime( $row['deadLine']));
     echo '
         <tr>
           <td>'. $row['tasks'].'</td>
           <td>'. $deadline.'</td>';
-    if ($row['done'])
-      echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
-    else{
       echo ' <td> <input type="checkbox" onchange="setTaskDone('.$row['idElement'].')" id="'.$row['idElement'].'" </td>';
       echo'
        <td>
         <button id="rem_'.$row['idElement'].'" type="button" onclick="removeElementFromList('.$row['idElement'].')" > <i id = "fa_'.$row['idElement'].'" class="fa fa-close"></i></button>
       </td>';
+    echo' </tr>';
     }
+  }
+
+  foreach ($elementsDone as $key => $row){
+    $deadline = date('d/m/Y', strtotime( $row['deadLine']));
+    echo '
+        <tr>
+          <td>'. $row['tasks'].'</td>
+          <td>'. $deadline.'</td>';
+    echo ' <td> <input type="checkbox" name="checkbox" disabled="disabled" checked> </td>';
     echo' </tr>';
   }
+
   echo '</table>';
 
   echo '
@@ -35,6 +54,7 @@ function showTasks($elements){
     <button id ="addItem" type="button" onclick="addTask()" >Add Item </button>
     <br>';
 }
+
 function getAllElements($dbh) {
     try{
       $stmt = $dbh->prepare('SELECT * FROM ELEMENT WHERE idUser = ?');
@@ -75,13 +95,7 @@ function getTaskSearch($dbh, $task, $category){
      $stmt->execute(array($_SESSION['currentUser'],$category, "$task%"));
    }
 
-   $result = $stmt->fetchAll();
-   if ($result == null){
-      echo "<label> Nothing was found </label>";
-      return;
-    }
-   else
-     showTasks($result);
+    showTasks($stmt->fetchAll());
 
   }
   catch (Exception $e) {
