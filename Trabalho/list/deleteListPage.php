@@ -10,6 +10,7 @@
     <label>What is the list you wish to delete? </label>
     <input type='text' id = "listName" name = "listName" placeholder='Type for a list...' onkeyup="getSimilarList(this.value)" />
     <br>
+    <br>
     <button id = "delete" type="submit">Delete List</button>
 
   </form>

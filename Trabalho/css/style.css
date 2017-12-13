@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Didact+Gothic|Josefin+Sans|Manuale');
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+/**********************************************************************************/
+/*******************************************GENERAL********************************/
+/**********************************************************************************/
 body {
     background-color: white;
     background-position: center center;
@@ -15,19 +18,31 @@ a {
   color: inherit;
 }
 
-header {
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}​
 
+input {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  font-size: 15px;
+}​
+
+/******************HEADER*****************/
+header {
   font-family: 'Josefin Slab';
   text-align: center;
   color: black;
   right: 0;
   left: 0;
   top: 0;
-  position: sticky;
   padding-bottom: 0.5em;
-  /* background: url("../assets/headerBackground.png");
-  background-repeat:no-repeat;
-  background-position: center;  */
 }
 
 header >h1 {
@@ -40,6 +55,7 @@ header >h2 {
   margin-top:0.5rem;
 }
 
+/******************FOOTER*****************/
 footer {
   font-family: 'Josefin Sans';
   margin-top: 90%;
@@ -48,7 +64,9 @@ footer {
   text-align: center;
 }
 
-/*************************LOGIN*********************/
+/**********************************************************************************/
+/****************************************LOGIN PAGE********************************/
+/**********************************************************************************/
 .login-page {
   width: 100%;
   padding: 8% 0 0;
@@ -96,10 +114,11 @@ footer {
   transition: all 0.3 ease;
   cursor: pointer;
 }
-/*login hover*/
+
 #loginform button:hover,.form button:active,.form button:focus {
   background: #103b59;
 }
+
 .form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
@@ -110,24 +129,29 @@ footer {
   color: #103b59;
   text-decoration: none;
 }
+
 .form .register-form {
   display: none;
 }
+
 .container {
   position: relative;
   z-index: 1;
   max-width: 300px;
   margin: 0 auto;
 }
+
 .container:before, .container:after {
   content: "";
   display: block;
   clear: both;
 }
+
 .container .info {
   margin: 50px auto;
   text-align: center;
 }
+
 .container .info h1 {
   margin: 0 0 15px;
   padding: 0;
@@ -135,10 +159,12 @@ footer {
   font-weight: 300;
   color: #1a1a1a;
 }
+
 .container .info span {
   color: #969696;
   font-size: 12px;
 }
+
 .container .info span a {
   color: #000000;
   text-decoration: none;
@@ -149,244 +175,20 @@ footer {
   color: #1a4aa8;
 }
 
-/*************************TASK*********************/
-#dateBar {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  text-align: center;
-  padding-bottom: 2em;
-}
-
-#dateBar >h3{
-  font-size: 1em;
-  margin-bottom:0;
-}
-
-#leftSideBar{
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  padding-left: 1em;
-}
-
-#filters{
-  float: left;
-}
-
-#sorts{
-  float: left;
-  padding-left: 5%;
-}
-
-#mainSection{
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  padding-left: 2rem;
-}
-
-#rightSideBar {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 4;
-  border-right: 5px double grey;
-  text-align: center;
-}
-
-.gridContainer{
-  width: 100%;
-  display:grid;
-  grid-template-columns: 25% 75%;
-  grid-template-rows: auto;
-  color: #474242;
-}
-/******RIGHT SIDE BAR*******/
-#userPhoto {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-}
-
-#profile{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #1c4059;
-  width: 50%;
+/**********************************************************************************/
+/*********************************REGISTER PAGE************************************/
+/**********************************************************************************/
+#register{
+  border-radius: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  z-index: 1;
+  background: white;
   padding: 15px;
-  color: #FFFFFF;
-  font-size: 12px;
-  transition: all 0.3 ease;
-  cursor: pointer;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-#profile:hover{
-background: #103b59;
-color: white;
-}
-
-#logout{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #1c4059;
-  width: 50%;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 12px;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-#logout:hover{
-background: #103b59;
-color: white;
-}
-
-#addLis{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #1c4059;
-  width: 50%;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 12px;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-#addLis:hover{
-background: #103b59;
-color: white;
-}
-
-#remLis{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #1c4059;
-  width: 50%;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 12px;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-#remLis:hover{
-background: #103b59;
-color: white;
-}
-
-/******MAIN BAR*******/
-#upList{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #1c4059;
-  width: 25%;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 12px;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-#upList:hover{
-background: #103b59;
-color: white;
-}
-
-#addItem{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #1c4059;
-  width: 25%;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 12px;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-#addItem:hover{
-background: #103b59;
-color: white;
-}
-
-/*************************PROFILE*********************/
-#editProfile{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #1c4059;
-  width: 25%;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 12px;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-#editProfile:hover{
-background: #103b59;
-color: white;
-}
-
-#exit{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #1c4059;
-  width: 10%;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 12px;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-#exit:hover{
-background: #103b59;
-color: white;
-}
-
-#profilePage{
-  padding-left:2em;
-}
-
-/*************************EDIT PROFILE*********************/
-#profileEdit{
-  padding-left:2em;
-}
-
-#editProfilePage{
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #1c4059;
-  width: 25%;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 12px;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-#editProfilePage:hover{
-background: #103b59;
-color: white;
-}
-
-/*************************REGISTER*********************/
+/*register button*/
 #signup{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -418,12 +220,212 @@ color: white;
   text-decoration: none;
 }
 
-/*************************ADD ITEM/LIST*********************/
-#newList{
-  padding-left:2em;
+/**********************************************************************************/
+/**************************************TASK PAGE***********************************/
+/**********************************************************************************/
+.gridContainer{
+  width: 100%;
+  display:grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: auto;
+  color: #474242;
+}
+/*************************DATE BAR*********************/
+#dateBar {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  text-align: center;
+  padding-bottom: 2em;
 }
 
-#add{
+#dateBar >h3{
+  font-size: 1em;
+  margin-bottom:0;
+}
+
+/*************************SORTS BAR*********************/
+#leftSideBar{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  border-radius: 15px;
+  margin-left: 5%;
+  width: 85%;
+  z-index: 1;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin-bottom: 1em;
+}
+
+#filters{
+  float: left;
+}
+
+#sorts{
+  float: left;
+  padding-left: 5%;
+}
+
+/*alphabetically button*/
+#sortAlpha{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#sortAlpha:hover{
+background: #103b59;
+color: white;
+}
+
+/*timestamp button*/
+#sortTimes{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#sortTimes:hover{
+background: #103b59;
+color: white;
+}
+
+/*************************PROFILE BAR*********************/
+#rightSideBar {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  border-right: 5px double grey;
+  text-align: center;
+}
+
+/*user photo*/
+#userPhoto {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+/*profile button*/
+#profile{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#profile:hover{
+background: #103b59;
+color: white;
+}
+
+/*log out button*/
+#logout{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#logout:hover{
+background: #103b59;
+color: white;
+}
+
+/*add list button*/
+#addLis{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#addLis:hover{
+background: #103b59;
+color: white;
+}
+
+/*remove list button*/
+#remLis{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#remLis:hover{
+background: #103b59;
+color: white;
+}
+
+/*time quotes gif*/
+#timeGif{
+  border: 5px double #1c4059;
+}
+
+/*************************TASKS BAR*********************/
+#mainSection{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  padding-left: 2rem;
+  border-radius: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 85%;
+  z-index: 1;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/*add item button*/
+#addItem{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -436,11 +438,108 @@ color: white;
   cursor: pointer;
 }
 
-#add:hover{
+#addItem:hover{
 background: #103b59;
 color: white;
 }
 
+/**********************************************************************************/
+/**************************************PROFILE PAGE********************************/
+/**********************************************************************************/
+#profilePage{
+  border-radius: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  z-index: 1;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/*edit profile button*/
+#editProfile{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#editProfile:hover{
+background: #103b59;
+color: white;
+}
+
+/*go back button*/
+#exit{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 10%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#exit:hover{
+background: #103b59;
+color: white;
+}
+
+/**********************************************************************************/
+/*********************************EDIT PROFILE PAGE********************************/
+/**********************************************************************************/
+#profileEdit{
+  border-radius: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  z-index: 1;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/*conclude changes button*/
+#editProfilePage{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#editProfilePage:hover{
+background: #103b59;
+color: white;
+}
+
+/**********************************************************************************/
+/***********************************ADD LIST PAGE**********************************/
+/**********************************************************************************/
+#newList{
+  border-radius: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  z-index: 1;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/*generate tasks button*/
 #addNewList{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -459,22 +558,20 @@ background: #103b59;
 color: white;
 }
 
-label {
-  display: inline-block;
-  width: 100px;
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  font-size: 15px;
-  font-weight: bold;
-}​
+/**********************************************************************************/
+/*********************************REMOVE LIST PAGE*********************************/
+/**********************************************************************************/
+#returnList{
+  border-radius: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  z-index: 1;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
 
-input {
-  display: inline-block;
-  width: 140px;
-  text-align: right;
-  font-size: 15px;
-}​
-
+/*delete list button*/
 #delete{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -491,8 +588,4 @@ input {
 #delete:hover{
 background: #103b59;
 color: white;
-}
-
-#timeGif{
-  border: 5px double #1c4059;
 }

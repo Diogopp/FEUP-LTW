@@ -56,7 +56,9 @@
      echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
 ?>
+<br>
   <button id ="editProfilePage" type="submit">Conclude changes</button>
+  <br>
   <button id ='exit' type="button" onclick="window.location.href='../index.php'">Go back</button>
 </div>
 

@@ -1,5 +1,5 @@
-<div id = "leftSideBar" style="height:180px">
-  <section id ="filters" style="float:left;">
+<div id = "leftSideBar">
+  <section id ="filters">
   <h4><b>Filter by</b></h4>
     Category
         <select id ="categoryFilter" onchange="showCategory(this.value)">
@@ -17,7 +17,5 @@
   <h4><b>Sort by</b></h4>
        <button> <a id = "sortAlpha" onclick="showAlphabetically()">Alphabetically</a> </button>
        <button> <a id = "sortTimes" onclick="sortTimes()">Timestamp</a> </button>
-
-
   </section>
 </div>

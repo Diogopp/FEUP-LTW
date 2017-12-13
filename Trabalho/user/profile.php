@@ -40,6 +40,7 @@
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 ?>
+<br>
   <button id='editProfile' onclick="window.location.href= 'editProfilePage.php'">Edit Profile</button>
   <br>
   <button id='exit' onclick="window.location.href='../index.php'">Go back</button>
