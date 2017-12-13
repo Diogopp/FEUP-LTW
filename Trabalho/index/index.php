@@ -31,6 +31,10 @@ if (isset($_SESSION['currentUser']))
 	{
 		alert("You can't use some of those characters!");
 	}
+  function categoryNotFound()
+	{
+		alert("That category does not exist!");
+	}
 
   <?php
   if (isset($_GET["specialChars"]))
@@ -38,6 +42,10 @@ if (isset($_SESSION['currentUser']))
 
 	if (isset($_GET["failed"]))
 		echo "loginFailed();";
+
+  if (isset($_GET["categoryNotFound"]))
+		echo "categoryNotFound();";
+
   ?>
 </script>
 
