@@ -1,8 +1,7 @@
 <div id = "leftSideBar" style="height:180px">
   <section id ="filters" style="float:left;">
   <h4><b>Filter by</b></h4>
-    <ul>
-      <li>Category</li>
+    Category
         <select id ="categoryFilter" onchange="showCategory(this.value)">
           <option value='None'>All Tasks</option>
             <?php $categories = getAllListsFromUser($dbh);
@@ -10,16 +9,15 @@
                       echo "<option value='".$list['category']."'>".$list['category']."</option>";
              ?>
         </select>
-      <li>Search</li>
+      Search
         <input type='text' id = "searchBar" name = "searchBar" placeholder="Search for a task..." onkeyup="getSearch(this.value)" />
-    </ul>
+
   </section>
     <section id ="sorts">
   <h4><b>Sort by</b></h4>
-    <ul>
-      <li> <a id = "sortAlpha" onclick="showAlphabetically()">Alphabetically</a></li>
-      <li> <a id = "sortTimes" onclick="sortTimes()">Timestamp</a></li>
-    </ul>
+       <button> <a id = "sortAlpha" onclick="showAlphabetically()">Alphabetically</a> </button>
+       <button> <a id = "sortTimes" onclick="sortTimes()">Timestamp</a> </button>
+
 
   </section>
 </div>

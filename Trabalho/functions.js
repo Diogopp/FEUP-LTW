@@ -24,7 +24,6 @@ if (document.getElementById("remLis") != null)
       window.location.href="../list/deleteListPage.php";
 }
 
-
 removeElementFromList = function(id){
   if (confirm("Are you sure you want to remove the task?")){
       let url = '../list/deleteItem.php?id=' + id;

@@ -4,8 +4,6 @@
   include_once('../templates/header.php');
  ?>
 
-<!--idUser,name,dataNascimento , password , pathImage , sexo , dataRegisto  -->
-
 <div id = "profileEdit">
   <form id="editProf" method="post" action = "editProfile.php">
   <?php
@@ -25,7 +23,6 @@
       echo "<label>Password: </label>";
       echo "<input type='password' name='password' placeholder='password' value=".$row['password']."  />";
       echo '<br>';
-      
       echo "<label>Gender: </label><br>";
 
 
@@ -50,9 +47,8 @@
           <input type="radio" name="gender" value="other"> Other';
       }
       echo '<br>';
-
-      echo "<label>Extra Information: </label>";
-      echo "<input type='text' name='extra' placeholder='Extra information...' value = ".$row['extra']."/>";
+      echo "<label>Extra : </label>";
+      echo '<input type="text" name="extra" placeholder="Extra information..." value ="'.$row['extra'].'"  />';
       echo '<br>';
 
     }
@@ -61,6 +57,7 @@
     }
 ?>
   <button id ="editProfilePage" type="submit">Conclude changes</button>
+  <button id ='exit' type="button" onclick="window.location.href='../index.php'">Go back</button>
 </div>
 
 <?php include_once('../templates/footer.php'); ?>

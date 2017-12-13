@@ -4,13 +4,20 @@
 
   try{
 
+    $date = date('Y-m-d', time());
+
+    if ($date < $_POST['birthdate']){
+      header('Location: editProfilePage.php');
+      die();
+    }
+
   if (isset($_POST['extra'])){
 
    $stmt = $dbh->prepare('UPDATE USER
-                          SET name = ?, dataNascimento = ?, sexo = ?, extra = ?,
+                          SET name = ?, dataNascimento = ?, sexo = ?, extra = ?
                           WHERE idUser = ?');
 
-   $stmt->execute(array($_POST['username'], $_POST['birthdate'],$_POST['gender'],  $_POST['extra'], $_SESSION['currentUser']));
+   $stmt->execute(array($_POST['username'], $_POST['birthdate'], $_POST['gender'],  $_POST['extra'], $_SESSION['currentUser']));
    }
   else{
        $stmt = $dbh->prepare('UPDATE USER

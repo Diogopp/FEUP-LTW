@@ -16,18 +16,22 @@
     echo "<label>Name: </label>";
     echo $row['name'];
     echo '<br>';
+
     echo "<label>Birthdate: </label>";
     $birthDate = date('d/m/Y', strtotime( $row['dataNascimento']));
     echo $birthDate;
     echo '<br>';
+
     echo "<label>Gender: </label>";
     echo $row['sexo'];
     echo '<br>';
+
     echo "<label>Register Date: </label>";
     $registDate = date('d/m/Y', strtotime( $row['dataRegisto']));
     echo $registDate;
     echo '<br>';
-    echo "<label>Extra information: </label>";
+
+    echo "<label>Extra: </label>";
     echo $row['extra'];
     echo '<br>';
 
