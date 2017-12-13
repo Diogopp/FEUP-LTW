@@ -17,8 +17,8 @@
     <section id ="sorts">
   <h4><b>Sort by</b></h4>
     <ul>
-      <li><a href="" id = "sortAlpha" >Alphabetically</a></li>
-      <li><a href="" id = "sortTimes" >Timestamp</a></li>
+      <li> <a id = "sortAlpha" onclick="showAlphabetically()">Alphabetically</a></li>
+      <li> <a id = "sortTimes" onclick="sortTimes()">Timestamp</a></li>
     </ul>
 
   </section>
