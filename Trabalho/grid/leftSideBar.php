@@ -15,7 +15,7 @@
   </section>
     <section id ="sorts">
   <h4><b>Sort by</b></h4>
-       <button> <a id = "sortAlpha" onclick="showAlphabetically()">Alphabetically</a> </button>
-       <button> <a id = "sortTimes" onclick="sortTimes()">Timestamp</a> </button>
+       <button id = "sortAlpha" onclick="showAlphabetically()">Alphabetically</button>
+       <button id = "sortTimes" onclick="sortTimes()">Timestamp</button>
   </section>
 </div>
