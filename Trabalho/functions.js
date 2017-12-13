@@ -171,3 +171,34 @@ getSearch = function(task){
   xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
   xhttp.send(encodeForAjax({task: task, category: currentCategory}));
 }
+
+
+showAlphabetically = function(){
+  if (window.XMLHttpRequest)    // code for modern browsers
+      xhttp = new XMLHttpRequest();
+  else  // code for IE6, IE5
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("tasks").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "../database/tasksAlphabetically.php", true);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  xhttp.send();
+}
+
+sortTimes = function(){
+  if (window.XMLHttpRequest)    // code for modern browsers
+      xhttp = new XMLHttpRequest();
+  else  // code for IE6, IE5
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("tasks").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "../database/sortDeadline.php", true);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  xhttp.send();
+}
