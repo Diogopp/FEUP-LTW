@@ -5,6 +5,8 @@
 /*******************************************GENERAL********************************/
 /**********************************************************************************/
 body {
+  width: 100%;
+  margin: 0;
     background-color: white;
     background-position: center center;
     background-size: cover;
@@ -35,22 +37,20 @@ input {
 }​
 
 /******************HEADER*****************/
+/* NOVO */
 header {
+  width: 100%;
   font-family: 'Josefin Slab';
   text-align: center;
   color: black;
-  right: 0;
-  left: 0;
-  top: 0;
-  padding-bottom: 0.5em;
 }
 
-header >h1 {
+header h1 {
   font-size: 5em;
   margin-bottom:0rem;
 }
 
-header >h2 {
+header h2 {
   font-size: 1em;
   margin-top:0.5rem;
 }
@@ -230,6 +230,10 @@ color: white;
   grid-template-rows: auto;
   color: #474242;
 }
+
+table{
+  width: 100%;
+}
 /*************************DATE BAR*********************/
 #dateBar {
   grid-column-start: 1;
@@ -262,7 +266,7 @@ color: white;
 }
 
 #filters{
-  float: left;
+  bottom: 20px;
 }
 
 #sorts{
@@ -276,7 +280,7 @@ color: white;
   text-transform: uppercase;
   outline: 0;
   background: #1c4059;
-  width: 60%;
+  width: 150px;
   padding: 15px;
   color: #FFFFFF;
   font-size: 12px;
@@ -295,7 +299,7 @@ color: white;
   text-transform: uppercase;
   outline: 0;
   background: #1c4059;
-  width: 60%;
+  width: 100px;
   padding: 15px;
   color: #FFFFFF;
   font-size: 12px;
@@ -316,6 +320,14 @@ color: white;
   grid-row-end: 4;
   border-right: 5px double grey;
   text-align: center;
+}
+
+/* NOVO */
+.navBar{
+  position: fixed;
+  width: 300px;
+  left: 0;
+  top: 100px;
 }
 
 /*user photo*/
@@ -408,6 +420,10 @@ color: white;
 }
 
 /*************************TASKS BAR*********************/
+#tasks{
+  margin-top: 20px;
+}
+
 #mainSection{
   grid-column-start: 2;
   grid-column-end: 3;
