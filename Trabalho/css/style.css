@@ -78,10 +78,9 @@ footer {
   position: static;
   margin-left: 30%;
   margin-right:30%;
-  margin-top: 10%;
-  margin-bottom:70%;
+  margin-bottom: 12.5%;
   width: 40%;
-  height: 20%;
+  height:20%;
   z-index: 1;
   background: #FFFFFF;
   padding: 15px;
@@ -293,7 +292,7 @@ color: white;
   width: 300px;
   left: 0;
   top: 100px;
-  margin-top:70px;
+  margin-top:115px;
   text-align: center;
 }
 
@@ -422,6 +421,25 @@ color: white;
 }
 
 #addItem:hover{
+background: #103b59;
+color: white;
+}
+
+/*add item button in form*/
+#addNewItem{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1c4059;
+  width: 25%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+#addNewItem:hover{
 background: #103b59;
 color: white;
 }

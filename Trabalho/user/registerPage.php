@@ -10,7 +10,7 @@
       </div>
       <div class="block">
       <label>Password: </label>
-      <input type="password" pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[\+\*])([\w\+\*]){4,}(?!\1)[\w\+\*]"
+      <input type="password" pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])([\w]){3,}(?!\1)[\w]"
             name="password" placeholder="password" title="Lower and uppercase and a '+' or '*', with at least 5 characters"  required/>
       </div>
       <div class="block">
