@@ -16,6 +16,10 @@
     <section id ="sorts">
   <h4><b>Sort by</b></h4>
        <button id = "sortAlpha" onclick="showAlphabetically()">Alphabetically</button>
+<<<<<<< HEAD
        <button id = "sortTimes" onclick="sortTimes()">Timestamp </button>
+=======
+       <button id = "sortTimes" onclick="sortTimes()">Timestamp</button>
+>>>>>>> 4e3129e43b81d76527a046146eef0b52889d6a5e
   </section>
 </div>
