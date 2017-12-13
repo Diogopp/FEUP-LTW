@@ -10,7 +10,7 @@
       </div>
       <div class="block">
       <label>Password: </label>
-      <input type="password" pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[\+\*])([\w\+\*]){4,}(?!\1)[\w\+\*]"
+      <input type="password" pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])([\w]){3,}(?!\1)[\w]"
             name="password" placeholder="password" title="Lower and uppercase and a '+' or '*', with at least 5 characters"  required/>
       </div>
       <div class="block">
@@ -28,7 +28,6 @@
       <label>Extra: </label>
       <input type="text" name="extra" placeholder="Extra information..."/>
       </div>
-      <br>
       <button id ="signup" type="submit">Register</button>
       <p class="message">Already registered? <a href="../">Login here</a></p>
     </form>
