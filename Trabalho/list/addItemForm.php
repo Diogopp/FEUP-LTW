@@ -17,6 +17,7 @@
       else
         echo '<input type="hidden" name="category" value="'.$_POST['category'].'" ></input>';
        ?>
+       <br>
       <button id ="addNewItem" >Add Item</button>
 
     </form>

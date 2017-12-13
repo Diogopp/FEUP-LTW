@@ -28,6 +28,7 @@
       <label>Extra: </label>
       <input type="text" name="extra" placeholder="Extra information..."/>
       </div>
+      <br>
       <button id ="signup" type="submit">Register</button>
       <p class="message">Already registered? <a href="../">Login here</a></p>
     </form>
