@@ -8,6 +8,8 @@ Diogo Peixoto Pereira | up201504326@fe.up.pt
 Maria Eduarda Santos Cunha | up201506524@fe.up.pt
 Vitor Emanuel Fernandes Magalhães | up201503447@fe.up.pt
 
+Code developed for Web Languages and Technologies (LTW).
+
 ## Project
 
 Login page:
