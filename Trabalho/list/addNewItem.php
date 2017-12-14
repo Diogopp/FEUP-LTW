@@ -11,10 +11,7 @@
       die();
     }
 
-    if (!preg_match ("/^[A-Za-z0-9]+$/", $_POST['task'])){
-      header("Location: ../index/index.php?specialChars");
-      die();
-    }
+
 
     $stmt = $dbh->prepare('SELECT idCategory FROM Category WHERE category = ?');
     $stmt->execute(array($_POST['category']));
